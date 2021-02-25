@@ -5,25 +5,72 @@
  */
 package routing;
 
-import core.Settings;
+import core.Connection;
+import core.DTNHost;
+import core.Message;
+
 
 /**
  *
  * @author JarkomOye
  */
-public class SoSim extends ActiveRouter{
+public class SoSim implements RoutingDecisionEngine{
 
-    public SoSim(Settings s) {
-        super(s);
-    }
-
-    public SoSim(ActiveRouter r) {
-        super(r);
+    @Override
+    public void connectionUp(DTNHost thisHost, DTNHost peer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public MessageRouter replicate() {
+    public void connectionDown(DTNHost thisHost, DTNHost peer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void doExchangeForNewConnection(Connection con, DTNHost peer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean newMessage(Message m) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isFinalDest(Message m, DTNHost aHost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean shouldSaveReceivedMessage(Message m, DTNHost thisHost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean shouldDeleteSentMessage(Message m, DTNHost otherHost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean shouldDeleteOldMessage(Message m, DTNHost hostReportingOld) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void update(DTNHost thisHost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public RoutingDecisionEngine replicate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
     
 }
