@@ -34,7 +34,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<MovementListener> movListeners;
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
-    private List<Integer> nationality, languages,affiliation, country ;
+    private List<Integer> affiliation, city, nationality, languages, country, position;
    
         
     static {
@@ -63,14 +63,20 @@ public class DTNHost implements Comparable<DTNHost> {
         this.address = getNextAddress();
         this.name = groupId + address;
         this.net = new ArrayList<NetworkInterface>();
+        
+        affiliation = new ArrayList<Integer>();
+        city = new ArrayList<Integer>();
         nationality = new ArrayList<Integer>();
         languages = new ArrayList<Integer>();
-        affiliation =new ArrayList<Integer>();
         country = new ArrayList<Integer>();
+        position = new ArrayList<Integer>();
+        
+        affiliation =SocialFeature.setAffiliation(this.name);
+        city = SocialFeature.setCity(this.name);
         nationality = SocialFeature.setNationality(this.name);
         languages = SocialFeature.setLanguages(this.name);
-        affiliation =SocialFeature.setAffiliation(this.name);
         country = SocialFeature.setCountry(this.name);
+        position = SocialFeature.setPosition(this.name);
 
         for (NetworkInterface i : interf) {
             NetworkInterface ni = i.replicate();
@@ -546,10 +552,13 @@ public class DTNHost implements Comparable<DTNHost> {
 
     public String SocialFeaturePrint(){
         String cetak ="";
+        cetak += affiliation.toString()+ "\n";
+        cetak += city.toString() + "\n";
         cetak += nationality.toString()+ "\n";
         cetak += languages.toString()+ "\n";
-        cetak += affiliation.toString()+ "\n";
         cetak += country.toString()+ "\n";
+        cetak += position.toString() + "\n";
+        
         return cetak;
     }
 
