@@ -16,6 +16,7 @@ import core.Message;
  */
 public class SoSim implements RoutingDecisionEngine{
 
+
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
