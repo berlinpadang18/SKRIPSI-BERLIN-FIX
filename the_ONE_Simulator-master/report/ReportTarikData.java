@@ -6,19 +6,13 @@
 package report;
 
 import core.DTNHost;
-import core.Message;
 import core.Settings;
 import core.SimScenario;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
-import routing.DecisionEngineRouter;
-import routing.MessageRouter;
-import routing.RoutingDecisionEngine;
 
 /**
  *
- * @author Rosemary
+ * @author JarkomOye
  */
 public class ReportTarikData extends Report {
 
