@@ -6,7 +6,6 @@
 package core;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -17,6 +16,7 @@ public class SocialFeature {
     private static ArrayList<Integer> affiliation, city, nationality, languages, country, position;
 
     public SocialFeature() {
+        
     }
     
     public static ArrayList<Integer> setAffiliation(String name) {
