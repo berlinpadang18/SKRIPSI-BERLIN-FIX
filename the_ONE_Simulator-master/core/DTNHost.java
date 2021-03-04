@@ -36,7 +36,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<MovementListener> movListeners;
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
-    private List<Integer> affiliation, city, nationality, languages, country, position;
+    private List<Integer> affiliation, nationality, languages, country;
    
         
     static {
@@ -67,18 +67,14 @@ public class DTNHost implements Comparable<DTNHost> {
         this.net = new ArrayList<NetworkInterface>();
         
         affiliation = new ArrayList<Integer>();
-        city = new ArrayList<Integer>();
         nationality = new ArrayList<Integer>();
         languages = new ArrayList<Integer>();
         country = new ArrayList<Integer>();
-        position = new ArrayList<Integer>();
         
         affiliation =SocialFeature.setAffiliation(this.name);
-        city = SocialFeature.setCity(this.name);
         nationality = SocialFeature.setNationality(this.name);
         languages = SocialFeature.setLanguages(this.name);
         country = SocialFeature.setCountry(this.name);
-        position = SocialFeature.setPosition(this.name);
 
         for (NetworkInterface i : interf) {
             NetworkInterface ni = i.replicate();
@@ -555,11 +551,9 @@ public class DTNHost implements Comparable<DTNHost> {
     public String SocialFeaturePrint(){
         String cetak ="";
         cetak += affiliation.toString()+ "\n";
-        cetak += city.toString() + "\n";
         cetak += nationality.toString()+ "\n";
         cetak += languages.toString()+ "\n";
         cetak += country.toString()+ "\n";
-        cetak += position.toString() + "\n";
         
         return cetak;
     }
@@ -568,11 +562,9 @@ public class DTNHost implements Comparable<DTNHost> {
         Map<String, List<Integer>> sf = new HashMap<>();
         
         sf.put("affiliation", this.affiliation);
-        sf.put("city", this.city);
         sf.put("nationality", this.nationality);
         sf.put("languages", this.languages);
         sf.put("country", this.country);
-        sf.put("position", this.position);
         
         return sf;
     }
