@@ -36,7 +36,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<MovementListener> movListeners;
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
-    private List<Integer> affiliation, nationality, languages, country;
+    private List<Integer> nationality, languages, affiliation, country;
    
         
     static {
@@ -66,14 +66,14 @@ public class DTNHost implements Comparable<DTNHost> {
         this.name = groupId + address;
         this.net = new ArrayList<NetworkInterface>();
         
-        affiliation = new ArrayList<Integer>();
         nationality = new ArrayList<Integer>();
         languages = new ArrayList<Integer>();
+        affiliation = new ArrayList<Integer>();
         country = new ArrayList<Integer>();
         
-        affiliation =SocialFeature.setAffiliation(this.name);
         nationality = SocialFeature.setNationality(this.name);
         languages = SocialFeature.setLanguages(this.name);
+        affiliation =SocialFeature.setAffiliation(this.name);
         country = SocialFeature.setCountry(this.name);
 
         for (NetworkInterface i : interf) {
@@ -550,9 +550,9 @@ public class DTNHost implements Comparable<DTNHost> {
 
     public String SocialFeaturePrint(){
         String cetak ="";
-        cetak += affiliation.toString()+ "\n";
         cetak += nationality.toString()+ "\n";
         cetak += languages.toString()+ "\n";
+        cetak += affiliation.toString()+ "\n";
         cetak += country.toString()+ "\n";
         
         return cetak;
@@ -561,9 +561,9 @@ public class DTNHost implements Comparable<DTNHost> {
     public Map<String, List<Integer>> getSocialFeature(){
         Map<String, List<Integer>> sf = new HashMap<>();
         
-        sf.put("affiliation", this.affiliation);
         sf.put("nationality", this.nationality);
         sf.put("languages", this.languages);
+        sf.put("affiliation", this.affiliation);
         sf.put("country", this.country);
         
         return sf;

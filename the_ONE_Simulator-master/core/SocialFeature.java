@@ -13,343 +13,11 @@ import java.util.ArrayList;
  */
 public class SocialFeature {
 
-    private static ArrayList<Integer> affiliation, nationality, languages, country;
+    private static ArrayList<Integer>nationality, languages, affiliation, country;
 
     public SocialFeature() {
         
     }
-    
-    public static ArrayList<Integer> setAffiliation(String name) {
-
-        affiliation = new ArrayList<Integer>();
-
-        String id = name.substring(name.length() - 2, name.length());
-        switch (name) {
-            case "p0":
-                affiliation.add(15);
-                return affiliation;
-
-            case "p1":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p2":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p3":
-                affiliation.add(22);
-                return affiliation;
-
-            case "p4":
-                affiliation.add(13);
-                return affiliation;
-
-            case "p5":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p6":
-                affiliation.add(25);
-                return affiliation;
-
-            case "p7":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p8":
-                affiliation.add(18);
-                return affiliation;
-
-            case "p9":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p10":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p11":
-                affiliation.add(26);
-                return affiliation;
-
-            case "p12":
-                affiliation.add(16);
-                return affiliation;
-
-            case "p13":
-                affiliation.add(1);
-                return affiliation;
-
-            case "p14":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p15":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p16":
-                affiliation.add(1);
-                return affiliation;
-
-            case "p17":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p18":
-                affiliation.add(3);
-                return affiliation;
-
-            case "p19":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p20":
-                affiliation.add(19);
-                return affiliation;
-
-            case "p21":
-                affiliation.add(12);
-                return affiliation;
-
-            case "p22":
-                affiliation.add(34);
-                return affiliation;
-
-            case "p23":
-                affiliation.add(28);
-                return affiliation;
-
-            case "p24":
-                affiliation.add(10);
-                return affiliation;
-
-            case "p25":
-                affiliation.add(3);
-                return affiliation;
-
-            case "p26":
-                affiliation.add(8);
-                return affiliation;
-
-            case "p27":
-                affiliation.add(35);
-                return affiliation;
-
-            case "p28":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p29":
-                affiliation.add(10);
-                return affiliation;
-
-            case "p30":
-                affiliation.add(6);
-                return affiliation;
-
-            case "p31":
-                affiliation.add(7);
-                return affiliation;
-
-            case "p32":
-                affiliation.add(5);
-                affiliation.add(10);
-                return affiliation;
-
-            case "p33":
-                affiliation.add(20);
-                return affiliation;
-
-            case "p34":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p35":
-                affiliation.add(2);
-                return affiliation;
-
-            case "p36":
-                affiliation.add(14);
-                return affiliation;
-
-            case "p37":
-                affiliation.add(20);
-                return affiliation;
-
-            case "p38":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p39":
-                affiliation.add(30);
-                return affiliation;
-
-            case "p40":
-                affiliation.add(25);
-                return affiliation;
-
-            case "p41":
-                affiliation.add(29);
-                return affiliation;
-
-            case "p42":
-                affiliation.add(24);
-                return affiliation;
-
-            case "p43":
-                affiliation.add(10);
-                return affiliation;
-
-            case "p44":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p45":
-                affiliation.add(32);
-                return affiliation;
-
-            case "p46":
-                affiliation.add(13);
-                return affiliation;
-
-            case "p47":
-                affiliation.add(17);
-                return affiliation;
-
-            case "p48":
-                affiliation.add(8);
-                return affiliation;
-
-            case "p49":
-                affiliation.add(10);
-                return affiliation;
-
-            case "p50":
-                affiliation.add(19);
-                return affiliation;
-
-            case "p51":
-                affiliation.add(23);
-                return affiliation;
-
-            case "p52":
-                affiliation.add(18);
-                return affiliation;
-
-            case "p53":
-                affiliation.add(10);
-                return affiliation;
-
-            case "p54":
-                affiliation.add(33);
-                return affiliation;
-
-            case "p55":
-                affiliation.add(24);
-                return affiliation;
-
-            case "p56":
-                affiliation.add(11);
-                return affiliation;
-
-            case "p57":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p58":
-                affiliation.add(15);
-                return affiliation;
-
-            case "p59":
-                affiliation.add(21);
-                return affiliation;
-
-            case "p60":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p61":
-                affiliation.add(11);
-                return affiliation;
-
-            case "p62":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p63":
-                affiliation.add(11);
-                return affiliation;
-
-            case "p64":
-                affiliation.add(16);
-                return affiliation;
-
-            case "p65":
-                affiliation.add(26);
-                affiliation.add(13);
-                return affiliation;
-
-            case "p66":
-                affiliation.add(23);
-                return affiliation;
-
-            case "p67":
-                affiliation.add(27);
-                return affiliation;
-
-            case "p68":
-                affiliation.add(4);
-                return affiliation;
-
-            case "p69":
-                affiliation.add(6);
-                return affiliation;
-
-            case "p70":
-                affiliation.add(26);
-                return affiliation;
-
-            case "p71":
-                affiliation.add(23);
-                return affiliation;
-
-            case "p72":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p73":
-                affiliation.add(16);
-                return affiliation;
-
-            case "p74":
-                affiliation.add(16);
-                return affiliation;
-
-            case "p75":
-                affiliation.add(9);
-                return affiliation;
-
-            case "p76":
-                affiliation.add(5);
-                return affiliation;
-
-            case "p77":
-                affiliation.add(31);
-                return affiliation;
-
-            case "p78":
-                affiliation.add(9);
-                return affiliation;
-
-            default:
-                break;
-        }
-        affiliation.add(0);
-        return affiliation;
-    }
-
     public static ArrayList<Integer> setNationality(String name) {
 
         nationality = new ArrayList<Integer>();
@@ -1123,6 +791,337 @@ public class SocialFeature {
         languages.add(0);
         return languages;
 
+    }
+    
+    public static ArrayList<Integer> setAffiliation(String name) {
+
+        affiliation = new ArrayList<Integer>();
+
+        String id = name.substring(name.length() - 2, name.length());
+        switch (name) {
+            case "p0":
+                affiliation.add(15);
+                return affiliation;
+
+            case "p1":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p2":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p3":
+                affiliation.add(22);
+                return affiliation;
+
+            case "p4":
+                affiliation.add(13);
+                return affiliation;
+
+            case "p5":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p6":
+                affiliation.add(25);
+                return affiliation;
+
+            case "p7":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p8":
+                affiliation.add(18);
+                return affiliation;
+
+            case "p9":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p10":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p11":
+                affiliation.add(26);
+                return affiliation;
+
+            case "p12":
+                affiliation.add(16);
+                return affiliation;
+
+            case "p13":
+                affiliation.add(1);
+                return affiliation;
+
+            case "p14":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p15":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p16":
+                affiliation.add(1);
+                return affiliation;
+
+            case "p17":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p18":
+                affiliation.add(3);
+                return affiliation;
+
+            case "p19":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p20":
+                affiliation.add(19);
+                return affiliation;
+
+            case "p21":
+                affiliation.add(12);
+                return affiliation;
+
+            case "p22":
+                affiliation.add(34);
+                return affiliation;
+
+            case "p23":
+                affiliation.add(28);
+                return affiliation;
+
+            case "p24":
+                affiliation.add(10);
+                return affiliation;
+
+            case "p25":
+                affiliation.add(3);
+                return affiliation;
+
+            case "p26":
+                affiliation.add(8);
+                return affiliation;
+
+            case "p27":
+                affiliation.add(35);
+                return affiliation;
+
+            case "p28":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p29":
+                affiliation.add(10);
+                return affiliation;
+
+            case "p30":
+                affiliation.add(6);
+                return affiliation;
+
+            case "p31":
+                affiliation.add(7);
+                return affiliation;
+
+            case "p32":
+                affiliation.add(5);
+                affiliation.add(10);
+                return affiliation;
+
+            case "p33":
+                affiliation.add(20);
+                return affiliation;
+
+            case "p34":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p35":
+                affiliation.add(2);
+                return affiliation;
+
+            case "p36":
+                affiliation.add(14);
+                return affiliation;
+
+            case "p37":
+                affiliation.add(20);
+                return affiliation;
+
+            case "p38":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p39":
+                affiliation.add(30);
+                return affiliation;
+
+            case "p40":
+                affiliation.add(25);
+                return affiliation;
+
+            case "p41":
+                affiliation.add(29);
+                return affiliation;
+
+            case "p42":
+                affiliation.add(24);
+                return affiliation;
+
+            case "p43":
+                affiliation.add(10);
+                return affiliation;
+
+            case "p44":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p45":
+                affiliation.add(32);
+                return affiliation;
+
+            case "p46":
+                affiliation.add(13);
+                return affiliation;
+
+            case "p47":
+                affiliation.add(17);
+                return affiliation;
+
+            case "p48":
+                affiliation.add(8);
+                return affiliation;
+
+            case "p49":
+                affiliation.add(10);
+                return affiliation;
+
+            case "p50":
+                affiliation.add(19);
+                return affiliation;
+
+            case "p51":
+                affiliation.add(23);
+                return affiliation;
+
+            case "p52":
+                affiliation.add(18);
+                return affiliation;
+
+            case "p53":
+                affiliation.add(10);
+                return affiliation;
+
+            case "p54":
+                affiliation.add(33);
+                return affiliation;
+
+            case "p55":
+                affiliation.add(24);
+                return affiliation;
+
+            case "p56":
+                affiliation.add(11);
+                return affiliation;
+
+            case "p57":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p58":
+                affiliation.add(15);
+                return affiliation;
+
+            case "p59":
+                affiliation.add(21);
+                return affiliation;
+
+            case "p60":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p61":
+                affiliation.add(11);
+                return affiliation;
+
+            case "p62":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p63":
+                affiliation.add(11);
+                return affiliation;
+
+            case "p64":
+                affiliation.add(16);
+                return affiliation;
+
+            case "p65":
+                affiliation.add(26);
+                affiliation.add(13);
+                return affiliation;
+
+            case "p66":
+                affiliation.add(23);
+                return affiliation;
+
+            case "p67":
+                affiliation.add(27);
+                return affiliation;
+
+            case "p68":
+                affiliation.add(4);
+                return affiliation;
+
+            case "p69":
+                affiliation.add(6);
+                return affiliation;
+
+            case "p70":
+                affiliation.add(26);
+                return affiliation;
+
+            case "p71":
+                affiliation.add(23);
+                return affiliation;
+
+            case "p72":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p73":
+                affiliation.add(16);
+                return affiliation;
+
+            case "p74":
+                affiliation.add(16);
+                return affiliation;
+
+            case "p75":
+                affiliation.add(9);
+                return affiliation;
+
+            case "p76":
+                affiliation.add(5);
+                return affiliation;
+
+            case "p77":
+                affiliation.add(31);
+                return affiliation;
+
+            case "p78":
+                affiliation.add(9);
+                return affiliation;
+
+            default:
+                break;
+        }
+        affiliation.add(0);
+        return affiliation;
     }
 
     public static ArrayList<Integer> setCountry(String name) {
