@@ -565,15 +565,15 @@ public class DTNHost implements Comparable<DTNHost> {
     }
     
     public Map<String, List<Integer>> getSocialFeature(){
-        Map<String, List<Integer>> a = new HashMap<>();
+        Map<String, List<Integer>> sf = new HashMap<>();
         
-        a.put("affiliation", this.affiliation);
-        a.put("city", this.city);
-        a.put("nationality", this.nationality);
-        a.put("languages", this.languages);
-        a.put("country", this.country);
-        a.put("position", this.position);
+        sf.put("affiliation", this.affiliation);
+        sf.put("city", this.city);
+        sf.put("nationality", this.nationality);
+        sf.put("languages", this.languages);
+        sf.put("country", this.country);
+        sf.put("position", this.position);
         
-        return a;
+        return sf;
     }
 }
