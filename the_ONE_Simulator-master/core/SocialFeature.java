@@ -22,7 +22,7 @@ public class SocialFeature {
 
         nationality = new ArrayList<Integer>();
 
-        String id = name.substring(name.length() - 2, name.length());
+        //String id = name.substring(name.length() - 2, name.length());
         switch (name) {
             case "p0":
                 nationality.add(2);
@@ -351,7 +351,7 @@ public class SocialFeature {
 
         languages = new ArrayList<Integer>();
 
-        String id = name.substring(name.length() - 2, name.length());
+        //String id = name.substring(name.length() - 2, name.length());
         switch (name) {
             case "p0":
                 languages.add(10);
@@ -680,7 +680,7 @@ public class SocialFeature {
 
         affiliation = new ArrayList<Integer>();
 
-        String id = name.substring(name.length() - 2, name.length());
+        //String id = name.substring(name.length() - 2, name.length());
         switch (name) {
             case "p0":
                 affiliation.add(2);
@@ -1009,7 +1009,7 @@ public class SocialFeature {
 
         country = new ArrayList<Integer>();
 
-        String id = name.substring(name.length() - 2, name.length());
+        //String id = name.substring(name.length() - 2, name.length());
         switch (name) {
             case "p0":
                 country.add(4);
