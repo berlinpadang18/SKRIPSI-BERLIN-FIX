@@ -8,6 +8,7 @@ package routing;
 import core.Connection;
 import core.DTNHost;
 import core.Message;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,10 +18,14 @@ import java.util.Map;
  */
 public class SoSim implements RoutingDecisionEngine {
 
+//    Map<DTNHost, Double> euclideanSim = new HashMap<DTNHost, Double>();
     Double euclideanSim;
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
+//        if (euclideanSim.containsKey(peer)) {
+//            
+//        }
         this.euclideanSim = hitungEuclideanSim(thisHost, peer);
 
     }
