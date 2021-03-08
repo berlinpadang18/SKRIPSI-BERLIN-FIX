@@ -36,7 +36,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<MovementListener> movListeners;
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
-    private List<Integer> nationality, languages, affiliation, country;
+    private Integer nationality, languages, affiliation, country;
    
         
     static {
@@ -66,10 +66,6 @@ public class DTNHost implements Comparable<DTNHost> {
         this.name = groupId + address;
         this.net = new ArrayList<NetworkInterface>();
         
-        nationality = new ArrayList<Integer>();
-        languages = new ArrayList<Integer>();
-        affiliation = new ArrayList<Integer>();
-        country = new ArrayList<Integer>();
         
         nationality = SocialFeature.setNationality(this.name);
         languages = SocialFeature.setLanguages(this.name);
@@ -558,13 +554,13 @@ public class DTNHost implements Comparable<DTNHost> {
         return cetak;
     }
     
-    public Map<String, List<Integer>> getSocialFeature(){
-        Map<String, List<Integer>> sf = new HashMap<>();
+    public List<Integer> getSocialFeature(){
+        List<Integer> sf = new ArrayList<Integer>();
         
-        sf.put("nationality", this.nationality);
-        sf.put("languages", this.languages);
-        sf.put("affiliation", this.affiliation);
-        sf.put("country", this.country);
+        sf.add(this.nationality);
+        sf.add(this.languages);
+        sf.add(this.affiliation);
+        sf.add(this.country);
         
         return sf;
     }

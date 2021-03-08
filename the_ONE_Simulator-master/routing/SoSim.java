@@ -8,18 +8,21 @@ package routing;
 import core.Connection;
 import core.DTNHost;
 import core.Message;
-
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author JarkomOye
  */
-public class SoSim implements RoutingDecisionEngine{
+public class SoSim implements RoutingDecisionEngine {
 
+    Double euclideanSim;
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
-        
+        this.euclideanSim = hitungEuclideanSim(thisHost, peer);
+
     }
 
     @Override
@@ -72,6 +75,16 @@ public class SoSim implements RoutingDecisionEngine{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
-    
+    public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
+
+        List<Integer> h = host.getSocialFeature();
+        List<Integer> p = peer.getSocialFeature();
+
+        Double isiAkar = 0.0;
+        for (int i = 0; i < h.size(); i++) {
+            isiAkar += Math.pow((p.get(i) - h.get(i)), 2);
+        }
+        Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(h.size()));
+        return hasil;
+    }
 }
