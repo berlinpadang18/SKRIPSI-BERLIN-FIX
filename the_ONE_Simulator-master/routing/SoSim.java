@@ -87,9 +87,9 @@ public class SoSim implements RoutingDecisionEngine {
 
         Double isiAkar = 0.0;
         for (int i = 0; i < h.size(); i++) {
-            isiAkar += Math.pow((p.get(i) - h.get(i)), 2);
+            isiAkar += Math.pow(((p.get(i)/100) - (h.get(i)/100)), 2);
         }
         Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(h.size()));
         return hasil;
-    }
+    } 
 }
