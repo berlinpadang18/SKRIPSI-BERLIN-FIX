@@ -79,7 +79,13 @@ public class SoSim implements RoutingDecisionEngine {
     public RoutingDecisionEngine replicate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+ 
+    public Double hitungVectorAwal(DTNHost host, DTNHost peer){
+        Double hasil = 0.0;
+        
+        return hasil;
+    }
+    
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
 
         List<Integer> h = host.getSocialFeature();
@@ -91,5 +97,5 @@ public class SoSim implements RoutingDecisionEngine {
         }
         Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(h.size()));
         return hasil;
-    } 
+    }
 }
