@@ -91,6 +91,7 @@ public abstract class Report {
 			outputInterval = settings.getDouble(INTERVAL_SETTING);
 		}
 		
+                // ambil ini untuk dimasukkan ke kelas SoSim
 		if (settings.contains(WARMUP_S)) {
 			this.warmupTime = settings.getInt(WARMUP_S);
 		}
