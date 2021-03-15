@@ -96,6 +96,7 @@ public class SoSim implements RoutingDecisionEngine{
 
         List<Integer> h = host.getSocialFeature();
         List<Integer> p = peer.getSocialFeature();
+//        nanti yang diatas ini diganti dengan nilai vektor yang sudah diambil dari method hitungVectorAwal()
 
         Double isiAkar = 0.0;
         for (int i = 0; i < h.size(); i++) {
