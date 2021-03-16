@@ -11,7 +11,6 @@ import core.Message;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import report.Report;
 
 /**
  *
@@ -28,7 +27,6 @@ public class SoSim implements RoutingDecisionEngine{
 //            
 //        }
         this.euclideanSim = hitungEuclideanSim(thisHost, peer);
-
     }
 
     @Override
