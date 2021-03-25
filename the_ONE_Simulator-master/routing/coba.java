@@ -97,16 +97,10 @@ public class coba implements RoutingDecisionEngine {
     public RoutingDecisionEngine replicate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+//    masukkan fungsi untuk hitung vektor awal 
     public Double hitungVectorAwalCoba(DTNHost host, DTNHost peer) {
-
-        int pemanasan = 0;
-        if (pemanasan == 0) {
-
-        }
-
-        Double hasil = 0.0;
-        return hasil;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Double hitungEuclideanSimCoba(DTNHost host, DTNHost peer) {
