@@ -71,6 +71,8 @@ public class DTNHost implements Comparable<DTNHost> {
         languages = SocialFeature.setLanguages(this.name);
         affiliation =SocialFeature.setAffiliation(this.name);
         country = SocialFeature.setCountry(this.name);
+        
+        
 
         for (NetworkInterface i : interf) {
             NetworkInterface ni = i.replicate();
@@ -98,6 +100,22 @@ public class DTNHost implements Comparable<DTNHost> {
                 l.initialLocation(this, this.location);
             }
         }
+    }
+
+    public Integer getNationality() {
+        return nationality;
+    }
+
+    public Integer getLanguages() {
+        return languages;
+    }
+
+    public Integer getAffiliation() {
+        return affiliation;
+    }
+
+    public Integer getCountry() {
+        return country;
     }
 
     /**
