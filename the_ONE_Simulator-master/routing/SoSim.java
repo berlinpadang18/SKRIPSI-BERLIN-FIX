@@ -20,13 +20,19 @@ public class SoSim implements RoutingDecisionEngine {
 
 //    Map<DTNHost, Double> euclideanSim = new HashMap<DTNHost, Double>();
     Double euclideanSim;
+    
+    public SoSim(){
+        
+    }
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
+        
 //        if (euclideanSim.containsKey(peer)) {
 //            
 //        }
 //        this.euclideanSim = hitungEuclideanSim(thisHost, peer);
+
         if (thisHost.getNationality() == peer.getNationality()
                 || thisHost.getLanguages() == peer.getLanguages()
                 || thisHost.getAffiliation() == peer.getAffiliation()
@@ -110,5 +116,4 @@ public class SoSim implements RoutingDecisionEngine {
         Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(h.size()));
         return hasil;
     }
-
 }
