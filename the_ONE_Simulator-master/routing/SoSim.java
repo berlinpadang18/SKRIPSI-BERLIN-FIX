@@ -19,11 +19,12 @@ import java.util.Map;
 public class SoSim implements RoutingDecisionEngine {
 
 //    Map<DTNHost, Double> euclideanSim = new HashMap<DTNHost, Double>();
-    Double euclideanSim;
     
-    public SoSim(){
+
+    public SoSim() {
         
     }
+    
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
@@ -93,14 +94,7 @@ public class SoSim implements RoutingDecisionEngine {
     }
 
     public Double hitungVectorAwal(DTNHost host, DTNHost peer) {
-
-        int pemanasan = 0;
-        if (pemanasan == 0) {
-
-        }
-
-        Double hasil = 0.0;
-        return hasil;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
