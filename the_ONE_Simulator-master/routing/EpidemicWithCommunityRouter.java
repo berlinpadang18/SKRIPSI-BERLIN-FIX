@@ -123,6 +123,13 @@ public class EpidemicWithCommunityRouter implements RoutingDecisionEngine, NodeR
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
         nodeList = thisHost.getRouter().nodeList;
         System.out.println(this.nodeList);
+        
+        if (thisHost.getNationality()==peer.getNationality() || 
+                thisHost.getLanguages()==peer.getLanguages() ||
+                thisHost.getAffiliation() == peer.getAffiliation() ||
+                thisHost.getCountry() == peer.getCountry()) {
+            System.out.println("SAMA");
+        }
     }
 
     @Override
