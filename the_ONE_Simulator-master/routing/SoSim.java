@@ -8,6 +8,8 @@ package routing;
 import core.Connection;
 import core.DTNHost;
 import core.Message;
+import core.Settings;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,49 +20,91 @@ import java.util.Map;
  */
 public class SoSim implements RoutingDecisionEngine {
 
-//    Map<DTNHost, Double> euclideanSim = new HashMap<DTNHost, Double>();
-    
+    Map<DTNHost, List<Integer>> simpanAwal = new HashMap<DTNHost, List<Integer>>();
+    Map<DTNHost, List<Double>> simpanSocialFeature = new HashMap<DTNHost, List<Double>>();
 
-    public SoSim() {
-        
+    public SoSim(Settings s) {
+
     }
-    
+
+    public SoSim(SoSim proto) {
+
+    }
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
+
+        simpanAwal.put(peer, peer.getSocialFeature());
         
-//        if (euclideanSim.containsKey(peer)) {
-//            
-//        }
-//        this.euclideanSim = hitungEuclideanSim(thisHost, peer);
+        int nationality = 0;
+        int language = 0;
+        int affiliation = 0;
+        int country = 0;
+        double hasilNationality = 0.0;
+        double hasilLanguage = 0.0;
+        double hasilAffiliation = 0.0;
+        double hasilCountry = 0.0;
 
-        if (thisHost.getNationality() == peer.getNationality()
-                || thisHost.getLanguages() == peer.getLanguages()
-                || thisHost.getAffiliation() == peer.getAffiliation()
-                || thisHost.getCountry() == peer.getCountry()) {
+        for (Map.Entry<DTNHost, List<Integer>> entry : simpanAwal.entrySet()) {
+            DTNHost key = entry.getKey();
+            List val = entry.getValue();
+            for (int i = 0; i < val.size(); i++) {
+                if (val.get(0) == thisHost.getNationality()) {
+                    nationality++;
+                } else if (val.get(1) == thisHost.getLanguages()) {
+                    language++;
+                } else if (val.get(2) == thisHost.getAffiliation()) {
+                    affiliation++;
+                } else if (val.get(3) == thisHost.getCountry()) {
+                    country++;
+                } else {
+                    continue;
+                }
+            }
+            hasilNationality = nationality / simpanAwal.size();
+            hasilLanguage = language / simpanAwal.size();
+            hasilAffiliation = affiliation / simpanAwal.size();
+            hasilCountry = country / simpanAwal.size();
 
-            System.out.println("SAMA");
+            List<Double> social = new ArrayList<Double>();
+            social.add(hasilNationality);
+            social.add(hasilLanguage);
+            social.add(hasilAffiliation);
+            social.add(hasilCountry);
+            simpanSocialFeature.put(key, social);
+            
         }
+        System.out.println("AAAA");
+        for (Map.Entry<DTNHost, List<Double>> entry : simpanSocialFeature.entrySet()) {
+            DTNHost key = entry.getKey();
+            List val = entry.getValue();
+            
+            System.out.println(entry.getKey() + ": "+entry.getValue().toString());
+            
+        }
+
     }
 
     @Override
     public void connectionDown(DTNHost thisHost, DTNHost peer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public boolean newMessage(Message m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+
+        return m.getTo() == aHost;
     }
 
     @Override
@@ -70,12 +114,12 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
     public boolean shouldDeleteSentMessage(Message m, DTNHost otherHost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
@@ -85,12 +129,12 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void update(DTNHost thisHost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public RoutingDecisionEngine replicate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new SoSim(this);
     }
 
     public Double hitungVectorAwal(DTNHost host, DTNHost peer) {
