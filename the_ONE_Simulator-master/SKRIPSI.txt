@@ -26,7 +26,7 @@ btInterface.transmitRange = 10
 btInterface.scanInterval = 120
 
 # Define number of node groups
-Scenario.nrofHostGroups = 2
+Scenario.nrofHostGroups = 1
 
 # Router
 Group.movementModel = StationaryMovement
@@ -54,7 +54,7 @@ Group.msgTtl = 360
 #10080 Reality 20160
 
 # group1 (pedestrians) specific settings
-Group1.groupID = P
+Group1.groupID = p
 Group1.nrofHosts = 79
 Group1.nodeLocation = 10, 10
 Group1.waitTime = 0, 43800
@@ -62,10 +62,10 @@ Group1.waitTime = 0, 43800
 # Haggle3-Infocom5 43800
 
 # group2 (Destinations) specific settings
-Group2.groupID = Dbbbbbbbb
-Group2.waitTime = 0, 43800
-Group2.nrofHosts = 1
-Group2.nodeLocation = 10, 10
+#Group2.groupID = Dbbbbbbbb
+#Group2.waitTime = 0, 43800
+#Group2.nrofHosts = 1
+#Group2.nodeLocation = 10, 10
 
 
 ## Message creation parameters 
@@ -80,8 +80,8 @@ Events1.filePath = DataSet.csv
 # RealityConnectionTraceFinal.txt
 
 #Events2.class = MessageEventGenerator
-Events2.class = MessageEventGeneratorSoSim
-Events2.tohosts = 2
+#Events2.class = MessageEventGeneratorSoSim
+#Events2.tohosts = 2
 # change interval to have more or less messages, see javadocs for more information.
 
 Events2.interval = 1160, 1240

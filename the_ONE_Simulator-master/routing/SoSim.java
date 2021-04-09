@@ -33,7 +33,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
-        
+
         simpanAwal.put(peer, peer.getSocialFeature());
         
         int nationality = 0;
@@ -49,7 +49,7 @@ public class SoSim implements RoutingDecisionEngine {
             DTNHost key = entry.getKey();
             List val = entry.getValue();
             
-                System.out.println(key + ": " + val.toString());
+//                System.out.println(key + ": " + val.toString());
             
             for (int i = 0; i < val.size(); i++) {
                 if (val.get(0) == thisHost.getNationality()) {
@@ -64,18 +64,20 @@ public class SoSim implements RoutingDecisionEngine {
                     continue;
                 }
             }
-            hasilNationality = nationality / simpanAwal.size();
+            
+            hasilNationality =  nationality / simpanAwal.size();
             hasilLanguage = language / simpanAwal.size();
             hasilAffiliation = affiliation / simpanAwal.size();
             hasilCountry = country / simpanAwal.size();
-
+            
             List<Double> social = new ArrayList<Double>();
             social.add(hasilNationality);
             social.add(hasilLanguage);
             social.add(hasilAffiliation);
             social.add(hasilCountry);
-            simpanSocialFeature.put(key, social);
             
+            System.out.println(social);
+            simpanSocialFeature.put(key, social);
         }
 //        System.out.println("AAAA");
 //        
@@ -84,7 +86,7 @@ public class SoSim implements RoutingDecisionEngine {
 //            List val = entry.getValue();
 //            
 //            System.out.println(key + ": "+val.toString());
-            
+//            
 //        }
         
     }
@@ -117,7 +119,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
-        return false;
+        return true;
     }
 
     @Override
@@ -140,12 +142,10 @@ public class SoSim implements RoutingDecisionEngine {
         return new SoSim(this);
     }
 
-    public Double hitungVectorAwal(DTNHost host, DTNHost peer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
 
+        
+        
         List<Integer> h = host.getSocialFeature();
         List<Integer> p = peer.getSocialFeature();
 //        nanti yang diatas ini diganti dengan nilai vektor yang sudah diambil dari method hitungVectorAwal()
