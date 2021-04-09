@@ -33,7 +33,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
-
+        
         simpanAwal.put(peer, peer.getSocialFeature());
         
         int nationality = 0;
@@ -48,6 +48,9 @@ public class SoSim implements RoutingDecisionEngine {
         for (Map.Entry<DTNHost, List<Integer>> entry : simpanAwal.entrySet()) {
             DTNHost key = entry.getKey();
             List val = entry.getValue();
+            
+                System.out.println(key + ": " + val.toString());
+            
             for (int i = 0; i < val.size(); i++) {
                 if (val.get(0) == thisHost.getNationality()) {
                     nationality++;
@@ -74,15 +77,16 @@ public class SoSim implements RoutingDecisionEngine {
             simpanSocialFeature.put(key, social);
             
         }
-        System.out.println("AAAA");
-        for (Map.Entry<DTNHost, List<Double>> entry : simpanSocialFeature.entrySet()) {
-            DTNHost key = entry.getKey();
-            List val = entry.getValue();
+//        System.out.println("AAAA");
+//        
+//        for (Map.Entry<DTNHost, List<Double>> entry : simpanSocialFeature.entrySet()) {
+//            DTNHost key = entry.getKey();
+//            List val = entry.getValue();
+//            
+//            System.out.println(key + ": "+val.toString());
             
-            System.out.println(entry.getKey() + ": "+entry.getValue().toString());
-            
-        }
-
+//        }
+        
     }
 
     @Override
@@ -92,7 +96,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-
+         
     }
 
     @Override
@@ -103,7 +107,6 @@ public class SoSim implements RoutingDecisionEngine {
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
         
-
         return m.getTo() == aHost;
     }
 
@@ -114,7 +117,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
-        return true;
+        return false;
     }
 
     @Override

@@ -5,7 +5,7 @@ Scenario.name = SKRIPSI
 Scenario.simulateConnections = true
 Scenario.updateInterval = 1
 # 43200s == 12h
-Scenario.endTime = 4320
+Scenario.endTime = 6480
 
 # 16981816 Reality 8490908
 # 274883 Haggle 3 Infocom 5
@@ -31,7 +31,7 @@ Scenario.nrofHostGroups = 2
 # Router
 Group.movementModel = StationaryMovement
 #Group.router = SoSim
-#Group.router = DecisionEngineRouter
+Group.router = DecisionEngineRouter
 #ProphetRouter.secondsInTimeUnit = 30
 #DecisionEngineRouter.decisionEngine = ProphetDecisionEngine
 DecisionEngineRouter.decisionEngine = SoSim
@@ -79,6 +79,7 @@ Events1.filePath = DataSet.csv
 # Haggle3-Infocom5.csv
 # RealityConnectionTraceFinal.txt
 
+#Events2.class = MessageEventGenerator
 Events2.class = MessageEventGeneratorSoSim
 Events2.tohosts = 2
 # change interval to have more or less messages, see javadocs for more information.

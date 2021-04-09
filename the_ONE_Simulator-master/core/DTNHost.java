@@ -575,10 +575,10 @@ public class DTNHost implements Comparable<DTNHost> {
     public List<Integer> getSocialFeature(){
         List<Integer> sf = new ArrayList<Integer>();
         
-        sf.add(this.nationality);
-        sf.add(this.languages);
-        sf.add(this.affiliation);
-        sf.add(this.country);
+        sf.add(this.getNationality());
+        sf.add(this.getLanguages());
+        sf.add(this.getAffiliation());
+        sf.add(this.getCountry());
         
         return sf;
     }
