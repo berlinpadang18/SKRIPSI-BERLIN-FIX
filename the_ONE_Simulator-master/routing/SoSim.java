@@ -71,6 +71,7 @@ public class SoSim implements RoutingDecisionEngine {
             social.add(hasilLanguage);
             social.add(hasilAffiliation);
             social.add(hasilCountry);
+            
             simpanSocialFeature.put(key, social);
             
         }
@@ -102,8 +103,6 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
-        
-
         return m.getTo() == aHost;
     }
 
@@ -145,6 +144,7 @@ public class SoSim implements RoutingDecisionEngine {
 
         List<Integer> h = host.getSocialFeature();
         List<Integer> p = peer.getSocialFeature();
+        
 //        nanti yang diatas ini diganti dengan nilai vektor yang sudah diambil dari method hitungVectorAwal()
 
         Double isiAkar = 0.0;
