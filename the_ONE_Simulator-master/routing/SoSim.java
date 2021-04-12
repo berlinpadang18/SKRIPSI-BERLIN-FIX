@@ -45,7 +45,7 @@ public class SoSim implements RoutingDecisionEngine {
             nodeditemui.add(peer); //  node yg ditemui akan dimasukin ke set
         }
 //        System.out.println(nodeditemui);
-
+                      
         if (SimClock.getTime() > 28500 && vektorawal.isEmpty()) { //jika sudah lebih dari waktu warmp up dan vektor awal kosong
             //inisiasi berapa kali node ketemu node dengan sf yg sama, disini nilai awal 0
             int nationality = 0;
@@ -84,6 +84,7 @@ public class SoSim implements RoutingDecisionEngine {
 //                System.out.println(bantu.pembagi(affiliation, nodeditemui.size()));
                 vektoraffiliation = bantu.pembagi(affiliation, nodeditemui.size());
                 vektorcountry = bantu.pembagi(country, nodeditemui.size());
+                
             }
             //memasukkan nilai vektor msg2 sf pada vektor awal 
             vektorawal.add(vektornationality);
@@ -187,8 +188,6 @@ public class SoSim implements RoutingDecisionEngine {
 
         List<Double> x = getVektorawal();
         List<Double> y = otherSoSim.getVektorawal();
-        
-        BantuHitung bantu = new BantuHitung();
 
 
         Double isiAkar = 0.0;

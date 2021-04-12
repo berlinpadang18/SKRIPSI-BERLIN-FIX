@@ -5,7 +5,7 @@ Scenario.name = SKRIPSI
 Scenario.simulateConnections = true
 Scenario.updateInterval = 1
 # 43200s == 12h
-Scenario.endTime = 6480
+Scenario.endTime = 648000
 
 # 16981816 Reality 8490908
 # 274883 Haggle 3 Infocom 5
@@ -110,7 +110,7 @@ MovementModel.rngSeed = 1
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 100, 100
 # How long time to move hosts in the world before real simulation
-MovementModel.warmup = 1728
+MovementModel.warmup = 172800
 
 # how many reports to load
 Report.nrofReports = 1
