@@ -9,10 +9,14 @@ import core.Connection;
 import core.DTNHost;
 import core.Message;
 import core.Settings;
+import core.SimClock;
+import core.SimScenario;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -20,8 +24,11 @@ import java.util.Map;
  */
 public class SoSim implements RoutingDecisionEngine {
 
-    Map<DTNHost, List<Integer>> simpanAwal = new HashMap<DTNHost, List<Integer>>();
-    Map<DTNHost, List<Double>> simpanSocialFeature = new HashMap<DTNHost, List<Double>>();
+    //untuk menyimpan node yang ditemui (yang diitungnya sekali)
+    Set<DTNHost> nodeditemui = new HashSet<DTNHost>();
+    List<Double> vektorawal = new ArrayList<Double>();
+//    Map<DTNHost, List<Integer>> simpanAwal = new HashMap<DTNHost, List<Integer>>(); //Untuk menyimpan social feature yg ditemui
+//    Map<DTNHost, List<Double>> simpanSocialFeature = new HashMap<DTNHost, List<Double>>();
 
     public SoSim(Settings s) {
 
@@ -33,60 +40,63 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
-        
-        simpanAwal.put(peer, peer.getSocialFeature());
-        
-        int nationality = 0;
-        int language = 0;
-        int affiliation = 0;
-        int country = 0;
-        double hasilNationality = 0.0;
-        double hasilLanguage = 0.0;
-        double hasilAffiliation = 0.0;
-        double hasilCountry = 0.0;
 
-        for (Map.Entry<DTNHost, List<Integer>> entry : simpanAwal.entrySet()) {
-            DTNHost key = entry.getKey();
-            List val = entry.getValue();
-            
-                System.out.println(key + ": " + val.toString());
-            
-            for (int i = 0; i < val.size(); i++) {
-                if (val.get(0) == thisHost.getNationality()) {
+        if (SimClock.getTime() <= 28500) { //jika kurang dari 1728(warmup time)
+            nodeditemui.add(peer); //  node yg ditemui akan dimasukin ke set
+        }
+//        System.out.println(nodeditemui);
+
+        if (SimClock.getTime() > 28500 && vektorawal.isEmpty()) { //jika sudah lebih dari waktu warmp up dan vektor awal kosong
+            //inisiasi berapa kali node ketemu node dengan sf yg sama, disini nilai awal 0
+            int nationality = 0;
+            int language = 0;
+            int affiliation = 0;
+            int country = 0;
+            //inisiasi berapa kali node ketemu dengan semua node, disini nilai awal 0
+            double vektornationality = 0;
+            double vektorlanguage = 0;
+            double vektoraffiliation = 0;
+            double vektorcountry = 0;
+
+            BantuHitung bantu = new BantuHitung(); //buat objek untuk manggil rumus bantu bagi biar bisa pecahan
+
+            for (DTNHost node : nodeditemui) {
+
+                if (node.getNationality() == thisHost.getNationality()) {
                     nationality++;
-                } else if (val.get(1) == thisHost.getLanguages()) {
+                }
+                if (node.getLanguages() == thisHost.getLanguages()) {
                     language++;
-                } else if (val.get(2) == thisHost.getAffiliation()) {
+                }
+                if (node.getAffiliation() == thisHost.getAffiliation()) {
                     affiliation++;
-                } else if (val.get(3) == thisHost.getCountry()) {
+                }
+                if (node.getCountry() == thisHost.getCountry()) {
                     country++;
-                } else {
-                    continue;
                 }
             }
-            hasilNationality = nationality / simpanAwal.size();
-            hasilLanguage = language / simpanAwal.size();
-            hasilAffiliation = affiliation / simpanAwal.size();
-            hasilCountry = country / simpanAwal.size();
 
-            List<Double> social = new ArrayList<Double>();
-            social.add(hasilNationality);
-            social.add(hasilLanguage);
-            social.add(hasilAffiliation);
-            social.add(hasilCountry);
-            simpanSocialFeature.put(key, social);
-            
+            //hitung vektor , node yg sfnya sama dgn sfnya dibagi dengan node yg ditemui 
+            if (!nodeditemui.isEmpty()) {
+                vektornationality = bantu.pembagi(nationality, nodeditemui.size());
+                vektorlanguage = bantu.pembagi(language, nodeditemui.size());
+//                System.out.println(affiliation + "/" + nodeditemui.size() ); // untuk cek hasilnya (yg dibagi 2)
+//                System.out.println(bantu.pembagi(affiliation, nodeditemui.size()));
+                vektoraffiliation = bantu.pembagi(affiliation, nodeditemui.size());
+                vektorcountry = bantu.pembagi(country, nodeditemui.size());
+            }
+            //memasukkan nilai vektor msg2 sf pada vektor awal 
+            vektorawal.add(vektornationality);
+            vektorawal.add(vektorlanguage);
+            vektorawal.add(vektoraffiliation);
+            vektorawal.add(vektorcountry);
+
+            //untuk cek vektor awal
+//            System.out.println(SimClock.getIntTime());
+//            System.out.println(thisHost);
+//            System.out.println(vektorawal);
         }
-//        System.out.println("AAAA");
-//        
-//        for (Map.Entry<DTNHost, List<Double>> entry : simpanSocialFeature.entrySet()) {
-//            DTNHost key = entry.getKey();
-//            List val = entry.getValue();
-//            
-//            System.out.println(key + ": "+val.toString());
-            
-//        }
-        
+
     }
 
     @Override
@@ -96,7 +106,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-         
+
     }
 
     @Override
@@ -106,18 +116,24 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
-        
+
         return m.getTo() == aHost;
     }
 
     @Override
     public boolean shouldSaveReceivedMessage(Message m, DTNHost thisHost) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
-        return false;
+        if (SimClock.getIntTime() >= 28500) {
+            double euclidean = hitungEuclideanSim(thisHost, otherHost);
+
+//        System.out.println(thisHost + " >> " + otherHost);
+//        System.out.println(tanimoto);
+        }
+        return true;
     }
 
     @Override
@@ -127,7 +143,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean shouldDeleteOldMessage(Message m, DTNHost hostReportingOld) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
@@ -140,21 +156,46 @@ public class SoSim implements RoutingDecisionEngine {
         return new SoSim(this);
     }
 
-    public Double hitungVectorAwal(DTNHost host, DTNHost peer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    public static float calculate(Map features1, Map features2) {
+//        Set common = new TreeSet(features1.keySet());
+//        common.retainAll(features2.keySet());
+//        double xy = 0., x = 0., y = 0.;
+//        for (String s : common) {
+//            int c1 = features1.get(s), c2 = features2.get(s);
+//            xy += c1 * c2;
+//        }
+//        for (Integer c : features1.values()) {
+//            x += c * c;
+//        }
+//        for (Integer c : features2.values()) {
+//            y += c * c;
+//        }
+//        return (float) (xy / (x + y - xy));
+//    }
+    
+    public List<Double> getVektorawal() {
+        return vektorawal;
     }
 
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
 
-        List<Integer> h = host.getSocialFeature();
-        List<Integer> p = peer.getSocialFeature();
-//        nanti yang diatas ini diganti dengan nilai vektor yang sudah diambil dari method hitungVectorAwal()
+        MessageRouter otherRoute = peer.getRouter();
+
+        DecisionEngineRouter otherDe = (DecisionEngineRouter) otherRoute;
+
+        SoSim otherSoSim = (SoSim) otherDe.getDecisionEngine();
+
+        List<Double> x = getVektorawal();
+        List<Double> y = otherSoSim.getVektorawal();
+        
+        BantuHitung bantu = new BantuHitung();
+
 
         Double isiAkar = 0.0;
-        for (int i = 0; i < h.size(); i++) {
-            isiAkar += Math.pow((p.get(i) - h.get(i)), 2);
+        for (int i = 0; i < x.size(); i++) {
+            isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
         }
-        Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(h.size()));
+        Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(x.size()));
         return hasil;
     }
 }

@@ -1,0 +1,105 @@
+## Scenario settings SoSim 
+Scenario.name = sosim_settings
+Scenario.simulateConnections = true
+Scenario.updateInterval = 0.1
+# 43200s == 12h
+Scenario.endTime = 114305
+
+
+# "Bluetooth" interface for all nodes
+btInterface.type = SimpleBroadcastInterface
+# Transmit speed of 2 Mbps = 250kBps
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+
+# High speed, long range, interface for group 4
+highspeedInterface.type = SimpleBroadcastInterface
+highspeedInterface.transmitSpeed = 10M
+highspeedInterface.transmitRange = 1000
+
+Scenario.nrofHostGroups = 1
+# ROUTER
+Group.movementModel = StationaryMovement
+#Group.router = EpidemicRouter
+Group.router = DecisionEngineRouter
+DecisionEngineRouter.decisionEngine = SoSimRon
+# Send Queue Mode, AFNER Using ascending order 
+#Group.sendQueue = 3
+Group.bufferSize = 50M
+Group.waitTime = 0, 120
+# All nodes have the bluetooth interface
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+# Walking speeds
+Group.speed = 0.5, 1.5
+## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240, 5 weeks= 50400
+Group.msgTtl = 840
+#Group.msgTtl = 1440
+#4320 Haggle 3 infocom 5
+#10080 Reality 20160
+
+Group.nrofHosts = 80
+# group1 (pedestrians) specific settings
+Group1.groupID = p
+#Group1.waitTime = 0, 43800
+#Group1.waitTime = 0, 23586
+# Haggle3-Infocom5 43800
+
+#Group1.nrofHosts = 80
+Group1.nodeLocation = 10, 10
+
+## Message creation parameters 
+# How many event generators
+Events.nrof = 2
+# Class of the first event generator
+Events1.class = ExternalEventsQueue
+# (following settings are specific for the MessageEventGenerator class)
+# Creation interval in seconds (one new message every 25 to 35 seconds)
+Events1.filePath = DataSet.txt
+# Haggle3-Infocom5.csv
+# RealityConnectionTraceFinal.txt
+
+Events2.class = MessageEventGenerator
+# change interval to have more or less messages, see javadocs for more information.
+
+Events2.interval = 1160, 1240
+
+# 25, 30 (~120 texts/hour)
+# 290, 310 (~12 texts/hour) Reality
+# 580, 620 (~ 6 texts/hour)
+# 1160, 1240 (~ 3 texts/ hour) Haggle3 - Infocom5
+# 2320, 2480 (~ 1 texts/ hour)
+
+Events2.size = 500k, 1M
+# Haggle3-Infocom5 250k,300k
+# Reality 20k 1/2 10k
+
+# range of message source/destination addresses
+Events2.hosts = 0,80
+Events2.prefix = M
+
+Events2.time = 0, 253283
+#274883 Haggle 3 infocom 5 253283
+#16981816 Reality 16377016 15772216
+
+
+## Movement model settings
+# seed for movement models' pseudo random number generator (default = 0)
+MovementModel.rngSeed = 1
+# World's size for Movement Models without implicit size (width, height; meters)
+MovementModel.worldSize = 100, 100
+# How long time to move hosts in the world before real simulation
+MovementModel.warmup = 28500
+
+## Reports - all report names have to be valid report classes
+
+# how many reports to load
+Report.nrofReports = 0
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+# default directory of reports (can be overridden per Report with output setting)
+Report.reportDir = reports/6 April/Haggle
+# Report classes to load
+#Report.report1 = MessageStatsReport
+
+
