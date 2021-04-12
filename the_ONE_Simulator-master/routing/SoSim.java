@@ -107,7 +107,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-
+         
     }
 
     @Override

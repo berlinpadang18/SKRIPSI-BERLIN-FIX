@@ -26,7 +26,7 @@ btInterface.transmitRange = 10
 btInterface.scanInterval = 120
 
 # Define number of node groups
-Scenario.nrofHostGroups = 2
+Scenario.nrofHostGroups = 1
 
 # Router
 Group.movementModel = StationaryMovement
@@ -62,10 +62,10 @@ Group1.waitTime = 0, 43800
 # Haggle3-Infocom5 43800
 
 # group2 (Destinations) specific settings
-Group2.groupID = Dbbbbbbbb
-Group2.waitTime = 0, 43800
-Group2.nrofHosts = 1
-Group2.nodeLocation = 10, 10
+#Group2.groupID = Dbbbbbbbb
+#Group2.waitTime = 0, 43800
+#Group2.nrofHosts = 1
+#Group2.nodeLocation = 10, 10
 
 
 ## Message creation parameters 
