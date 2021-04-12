@@ -92,9 +92,9 @@ public class SoSim implements RoutingDecisionEngine {
             vektorawal.add(vektorcountry);
 
             //untuk cek vektor awal
-            System.out.println(SimClock.getIntTime());
-            System.out.println(thisHost);
-            System.out.println(vektorawal);
+//            System.out.println(SimClock.getIntTime());
+//            System.out.println(thisHost);
+//            System.out.println(vektorawal);
         }
 
     }
@@ -131,7 +131,7 @@ public class SoSim implements RoutingDecisionEngine {
             double euclidean = hitungEuclideanSim(thisHost, otherHost);
 
 //        System.out.println(thisHost + " >> " + otherHost);
-//        System.out.println(euclidean);
+//        System.out.println(tanimoto);
         }
         return true;
     }
@@ -187,6 +187,9 @@ public class SoSim implements RoutingDecisionEngine {
 
         List<Double> x = getVektorawal();
         List<Double> y = otherSoSim.getVektorawal();
+        
+        BantuHitung bantu = new BantuHitung();
+
 
         Double isiAkar = 0.0;
         for (int i = 0; i < x.size(); i++) {
