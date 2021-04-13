@@ -1,6 +1,6 @@
 ## Scenario settings SoSim 
 Scenario.name = sosim_settings
-Scenario.simulateConnections = true
+Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 Scenario.endTime = 114305
@@ -22,7 +22,7 @@ Scenario.nrofHostGroups = 1
 Group.movementModel = StationaryMovement
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = SoSimRon
+DecisionEngineRouter.decisionEngine = SoSim
 # Send Queue Mode, AFNER Using ascending order 
 #Group.sendQueue = 3
 Group.bufferSize = 50M

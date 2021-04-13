@@ -20,8 +20,11 @@ public class BantuHitung {
     }
     
     public double hitungtanimoto (double a, double b, double c){
-        System.out.println(( a   /  (b + c - a)));
+//        System.out.println(( a   /  (b + c - a)));
         return ( a / (b + c - a)) ;
+    }
+    public double hitungEuclidean(double a, double b){
+        return 1 - (Math.sqrt(a) / (Math.sqrt(b)));
     }
     
     public double kali(double a, double b){

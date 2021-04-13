@@ -45,7 +45,7 @@ public class SoSim implements RoutingDecisionEngine {
             nodeditemui.add(peer); //  node yg ditemui akan dimasukin ke set
         }
 //        System.out.println(nodeditemui);
-                      
+
         if (SimClock.getTime() > 28500 && vektorawal.isEmpty()) { //jika sudah lebih dari waktu warmp up dan vektor awal kosong
             //inisiasi berapa kali node ketemu node dengan sf yg sama, disini nilai awal 0
             int nationality = 0;
@@ -84,7 +84,7 @@ public class SoSim implements RoutingDecisionEngine {
 //                System.out.println(bantu.pembagi(affiliation, nodeditemui.size()));
                 vektoraffiliation = bantu.pembagi(affiliation, nodeditemui.size());
                 vektorcountry = bantu.pembagi(country, nodeditemui.size());
-                
+
             }
             //memasukkan nilai vektor msg2 sf pada vektor awal 
             vektorawal.add(vektornationality);
@@ -107,7 +107,7 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-         
+
     }
 
     @Override
@@ -131,8 +131,8 @@ public class SoSim implements RoutingDecisionEngine {
         if (SimClock.getIntTime() >= 28500) {
             double euclidean = hitungEuclideanSim(thisHost, otherHost);
 
-//        System.out.println(thisHost + " >> " + otherHost);
-//        System.out.println(tanimoto);
+            System.out.println(thisHost + " >> " + otherHost);
+            System.out.println(euclidean);
         }
         return true;
     }
@@ -173,7 +173,6 @@ public class SoSim implements RoutingDecisionEngine {
 //        }
 //        return (float) (xy / (x + y - xy));
 //    }
-    
     public List<Double> getVektorawal() {
         return vektorawal;
     }
@@ -186,15 +185,20 @@ public class SoSim implements RoutingDecisionEngine {
 
         SoSim otherSoSim = (SoSim) otherDe.getDecisionEngine();
 
+        BantuHitung bantu = new BantuHitung();
+
         List<Double> x = getVektorawal();
         List<Double> y = otherSoSim.getVektorawal();
 
-
         Double isiAkar = 0.0;
-        for (int i = 0; i < x.size(); i++) {
-            isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
+        if (!x.isEmpty() && !y.isEmpty()) {
+
+            for (int i = 0; i < x.size(); i++) {
+                isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
+            }
+//            Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(x.size()));
+            return bantu.hitungEuclidean(isiAkar, x.size());
         }
-        Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(x.size()));
-        return hasil;
+        return 0.0;
     }
 }
