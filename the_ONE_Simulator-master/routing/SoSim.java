@@ -157,22 +157,6 @@ public class SoSim implements RoutingDecisionEngine {
         return new SoSim(this);
     }
 
-//    public static float calculate(Map features1, Map features2) {
-//        Set common = new TreeSet(features1.keySet());
-//        common.retainAll(features2.keySet());
-//        double xy = 0., x = 0., y = 0.;
-//        for (String s : common) {
-//            int c1 = features1.get(s), c2 = features2.get(s);
-//            xy += c1 * c2;
-//        }
-//        for (Integer c : features1.values()) {
-//            x += c * c;
-//        }
-//        for (Integer c : features2.values()) {
-//            y += c * c;
-//        }
-//        return (float) (xy / (x + y - xy));
-//    }
     public List<Double> getVektorawal() {
         return vektorawal;
     }

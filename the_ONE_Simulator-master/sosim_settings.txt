@@ -3,7 +3,7 @@ Scenario.name = sosim_settings
 Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
-Scenario.endTime = 114305
+Scenario.endTime = 130000
 
 
 # "Bluetooth" interface for all nodes
@@ -89,7 +89,7 @@ MovementModel.rngSeed = 1
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 100, 100
 # How long time to move hosts in the world before real simulation
-MovementModel.warmup = 28500
+MovementModel.warmup = 30000
 
 ## Reports - all report names have to be valid report classes
 
