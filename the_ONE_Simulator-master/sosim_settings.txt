@@ -3,7 +3,8 @@ Scenario.name = sosim_settings
 Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
-Scenario.endTime = 130000
+#Scenario.endTime = 130000
+Scenario.endTime = 342915
 
 
 # "Bluetooth" interface for all nodes
@@ -19,7 +20,7 @@ highspeedInterface.transmitRange = 1000
 
 Scenario.nrofHostGroups = 1
 # ROUTER
-Group.movementModel = StationaryMovement
+Group.movementModel = RandomWaypoint
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
 DecisionEngineRouter.decisionEngine = SoSim
@@ -87,19 +88,20 @@ Events2.time = 0, 253283
 # seed for movement models' pseudo random number generator (default = 0)
 MovementModel.rngSeed = 1
 # World's size for Movement Models without implicit size (width, height; meters)
-MovementModel.worldSize = 100, 100
+MovementModel.worldSize = 500, 500
 # How long time to move hosts in the world before real simulation
-MovementModel.warmup = 30000
+#MovementModel.warmup = 30000
+MovementModel.warmup = 55500
 
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load
-Report.nrofReports = 0
+Report.nrofReports = 1
 # length of the warm up period (simulated seconds)
 Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/6 April/Haggle
 # Report classes to load
-#Report.report1 = MessageStatsReport
+Report.report1 = MessageStatsReport
 
 

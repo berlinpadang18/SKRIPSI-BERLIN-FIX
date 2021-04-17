@@ -27,8 +27,7 @@ public class SoSim implements RoutingDecisionEngine {
     //untuk menyimpan node yang ditemui (yang diitungnya sekali)
     Set<DTNHost> nodeditemui = new HashSet<DTNHost>();
     List<Double> vektorawal = new ArrayList<Double>();
-//    Map<DTNHost, List<Integer>> simpanAwal = new HashMap<DTNHost, List<Integer>>(); //Untuk menyimpan social feature yg ditemui
-//    Map<DTNHost, List<Double>> simpanSocialFeature = new HashMap<DTNHost, List<Double>>();
+    double euclidean = 0;
 
     public SoSim(Settings s) {
 
@@ -47,11 +46,13 @@ public class SoSim implements RoutingDecisionEngine {
 //        System.out.println(nodeditemui);
 
         if (SimClock.getTime() > 28500 && vektorawal.isEmpty()) { //jika sudah lebih dari waktu warmp up dan vektor awal kosong
+
             //inisiasi berapa kali node ketemu node dengan sf yg sama, disini nilai awal 0
             int nationality = 0;
             int language = 0;
             int affiliation = 0;
             int country = 0;
+
             //inisiasi berapa kali node ketemu dengan semua node, disini nilai awal 0
             double vektornationality = 0;
             double vektorlanguage = 0;
@@ -129,12 +130,28 @@ public class SoSim implements RoutingDecisionEngine {
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
         if (SimClock.getIntTime() >= 28500) {
-            double euclidean = hitungEuclideanSim(thisHost, otherHost);
+            this.euclidean = hitungEuclideanSim(thisHost, otherHost);
 
             System.out.println(thisHost + " >> " + otherHost);
-            System.out.println(euclidean);
+            System.out.println(this.euclidean);
         }
-        return true;
+
+        DecisionEngineRouter otherRouter = (DecisionEngineRouter) otherHost.getRouter();
+        SoSim otherSoSim = (SoSim) otherRouter.getDecisionEngine();
+
+        double ti = this.euclidean; //masukkan nilai euclidean ke ti(Value)
+        if (m.getTo() == otherHost) {  //jika node yang ditemui adalah destinasi
+            return true; //pesan akan dikirim
+        } else if (ti < otherSoSim.getEuclidean()) { //jika value lebih kecil dari nilai similarity node lain
+            this.euclidean = otherSoSim.getEuclidean(); // masukkan nilai euclidean ke node lainnya
+
+            for (Message mes : otherHost.getMessageCollection()) { //baca pesan yang dibawa oleh node lain
+                if (!mes.toString().equals(m)) { //jika tidak ditemukan pesan yangnode pengirim bawa
+                    return true; //akan dikirim
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -161,6 +178,10 @@ public class SoSim implements RoutingDecisionEngine {
         return vektorawal;
     }
 
+    public double getEuclidean() {
+        return euclidean;
+    }
+
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
 
         MessageRouter otherRoute = peer.getRouter();
@@ -185,4 +206,5 @@ public class SoSim implements RoutingDecisionEngine {
         }
         return 0.0;
     }
+
 }
