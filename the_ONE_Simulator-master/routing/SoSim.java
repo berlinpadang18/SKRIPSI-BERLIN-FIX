@@ -118,7 +118,6 @@ public class SoSim implements RoutingDecisionEngine {
 
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
-
         return m.getTo() == aHost;
     }
 
@@ -206,5 +205,4 @@ public class SoSim implements RoutingDecisionEngine {
         }
         return 0.0;
     }
-
 }
