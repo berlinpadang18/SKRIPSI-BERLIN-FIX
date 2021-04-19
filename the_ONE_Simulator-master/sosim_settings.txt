@@ -63,7 +63,7 @@ Events1.filePath = DataSet.txt
 Events2.class = MessageEventGenerator
 # change interval to have more or less messages, see javadocs for more information.
 
-Events2.interval = 1160, 1240
+Events2.interval = 11, 15
 
 # 25, 30 (~120 texts/hour)
 # 290, 310 (~12 texts/hour) Reality

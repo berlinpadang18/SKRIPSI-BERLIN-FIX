@@ -145,7 +145,7 @@ public class SoSim implements RoutingDecisionEngine {
             this.euclidean = otherSoSim.getEuclidean(); // masukkan nilai euclidean ke node lainnya
 
             for (Message mes : otherHost.getMessageCollection()) { //baca pesan yang dibawa oleh node lain
-                if (!mes.toString().equals(m)) { //jika tidak ditemukan pesan yangnode pengirim bawa
+                if (!mes.toString().equals(m)) { //jika tidak ditemukan pesan yang node pengirim bawa
                     return true; //akan dikirim
                 }
             }
@@ -200,7 +200,6 @@ public class SoSim implements RoutingDecisionEngine {
             for (int i = 0; i < x.size(); i++) {
                 isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
             }
-//            Double hasil = 1 - (Math.sqrt(isiAkar) / Math.sqrt(x.size()));
             return bantu.hitungEuclidean(isiAkar, x.size());
         }
         return 0.0;
