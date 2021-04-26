@@ -131,8 +131,8 @@ public class SoSim implements RoutingDecisionEngine {
         if (SimClock.getIntTime() >= 28500) {
             this.euclidean = hitungEuclideanSim(thisHost, otherHost);
 
-            System.out.println(thisHost + " >> " + otherHost);
-            System.out.println(this.euclidean);
+//            System.out.println(thisHost + " >> " + otherHost);
+//            System.out.println(this.euclidean);
         }
 
         DecisionEngineRouter otherRouter = (DecisionEngineRouter) otherHost.getRouter();
@@ -200,6 +200,7 @@ public class SoSim implements RoutingDecisionEngine {
             for (int i = 0; i < x.size(); i++) {
                 isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
             }
+//            System.out.println(bantu.hitungEuclidean(isiAkar, x.size()));
             return bantu.hitungEuclidean(isiAkar, x.size());
         }
         return 0.0;
