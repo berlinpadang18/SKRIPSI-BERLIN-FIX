@@ -139,7 +139,7 @@ public class SoSim implements RoutingDecisionEngine {
         SoSim otherSoSim = (SoSim) otherRouter.getDecisionEngine();
 
         double ti = this.euclidean; //masukkan nilai euclidean ke ti(Value)
-        if (m.getTo() == otherHost) {  //jika node yang ditemui adalah destinasi
+        if (otherHost == m.getTo() ) {  //jika node yang ditemui adalah destinasi
             return true; //pesan akan dikirim
         } else if (ti < otherSoSim.getEuclidean()) { //jika value lebih kecil dari nilai similarity node lain
             this.euclidean = otherSoSim.getEuclidean(); // masukkan nilai euclidean ke node lainnya
