@@ -4,7 +4,7 @@ Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 #Scenario.endTime = 130000
-Scenario.endTime = 342915
+Scenario.endTime = 432000
 
 
 # "Bluetooth" interface for all nodes
@@ -26,7 +26,7 @@ Group.router = DecisionEngineRouter
 DecisionEngineRouter.decisionEngine = SoSim
 # Send Queue Mode, AFNER Using ascending order 
 #Group.sendQueue = 3
-Group.bufferSize = 50M
+Group.bufferSize = 150M
 Group.waitTime = 0, 120
 # All nodes have the bluetooth interface
 Group.nrofInterfaces = 1
@@ -34,8 +34,10 @@ Group.interface1 = btInterface
 # Walking speeds
 Group.speed = 0.5, 1.5
 ## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240, 5 weeks= 50400
-Group.msgTtl = 840
+#Group.msgTtl = 840
 #Group.msgTtl = 1440
+Group.msgTtl = 4320
+#Group.msgTtl = 10080
 #4320 Haggle 3 infocom 5
 #10080 Reality 20160
 
@@ -71,7 +73,8 @@ Events2.interval = 2320, 2480
 # 1160, 1240 (~ 3 texts/ hour) Haggle3 - Infocom5
 # 2320, 2480 (~ 1 texts/ hour)
 
-Events2.size = 500k, 1M
+#Events2.size = 500k, 1M
+Events2.size = 250k, 300k
 # Haggle3-Infocom5 250k,300k
 # Reality 20k 1/2 10k
 
@@ -79,7 +82,7 @@ Events2.size = 500k, 1M
 Events2.hosts = 0,80
 Events2.prefix = M
 
-Events2.time = 0, 253283
+Events2.time = 0, 253283 
 #274883 Haggle 3 infocom 5 253283
 #16981816 Reality 16377016 15772216
 
@@ -91,17 +94,19 @@ MovementModel.rngSeed = 1
 MovementModel.worldSize = 500, 500
 # How long time to move hosts in the world before real simulation
 #MovementModel.warmup = 30000
-MovementModel.warmup = 55500
+#MovementModel.warmup = 55500
+MovementModel.warmup = 28500
 
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load
-Report.nrofReports = 1
+Report.nrofReports = 2
 # length of the warm up period (simulated seconds)
-Report.warmup = 0
+Report.warmup = 28500
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/6 April/Haggle
 # Report classes to load
 Report.report1 = MessageStatsReport
+Report.report2 = OverheadPerContactReport
 
 

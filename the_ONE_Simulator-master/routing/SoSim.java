@@ -28,19 +28,19 @@ public class SoSim implements RoutingDecisionEngine {
     Set<DTNHost> nodeditemui = new HashSet<DTNHost>();
     List<Double> vektorawal = new ArrayList<Double>();
     double euclidean = 0;
-
+    
     public SoSim(Settings s) {
-
+        
     }
-
+    
     public SoSim(SoSim proto) {
-
+        
     }
-
+    
     @Override
     public void connectionUp(DTNHost thisHost, DTNHost peer) {
-
-        if (SimClock.getTime() <= 28500) { //jika kurang dari 1728(warmup time)
+        
+        if (SimClock.getTime() <= 28500) { //jika kurang dari 1728(warmup time) 
             nodeditemui.add(peer); //  node yg ditemui akan dimasukin ke set
         }
 //        System.out.println(nodeditemui);
@@ -58,11 +58,11 @@ public class SoSim implements RoutingDecisionEngine {
             double vektorlanguage = 0;
             double vektoraffiliation = 0;
             double vektorcountry = 0;
-
+            
             BantuHitung bantu = new BantuHitung(); //buat objek untuk manggil rumus bantu bagi biar bisa pecahan
 
             for (DTNHost node : nodeditemui) {
-
+                
                 if (node.getNationality() == thisHost.getNationality()) {
                     nationality++;
                 }
@@ -76,7 +76,7 @@ public class SoSim implements RoutingDecisionEngine {
                     country++;
                 }
             }
-
+            
             //hitung vektor , node yg sfnya sama dgn sfnya dibagi dengan node yg ditemui 
             if (!nodeditemui.isEmpty()) {
                 vektornationality = bantu.pembagi(nationality, nodeditemui.size());
@@ -85,47 +85,47 @@ public class SoSim implements RoutingDecisionEngine {
 //                System.out.println(bantu.pembagi(affiliation, nodeditemui.size()));
                 vektoraffiliation = bantu.pembagi(affiliation, nodeditemui.size());
                 vektorcountry = bantu.pembagi(country, nodeditemui.size());
-
+                
             }
             //memasukkan nilai vektor msg2 sf pada vektor awal 
             vektorawal.add(vektornationality);
             vektorawal.add(vektorlanguage);
             vektorawal.add(vektoraffiliation);
             vektorawal.add(vektorcountry);
-
+            
             //untuk cek vektor awal
 //            System.out.println(SimClock.getIntTime());
 //            System.out.println(thisHost);
 //            System.out.println(vektorawal);
         }
-
+        
     }
-
+    
     @Override
     public void connectionDown(DTNHost thisHost, DTNHost peer) {
-
+        
     }
-
+    
     @Override
     public void doExchangeForNewConnection(Connection con, DTNHost peer) {
-
+        
     }
-
+    
     @Override
     public boolean newMessage(Message m) {
         return true;
     }
-
+    
     @Override
     public boolean isFinalDest(Message m, DTNHost aHost) {
         return m.getTo() == aHost;
     }
-
+    
     @Override
     public boolean shouldSaveReceivedMessage(Message m, DTNHost thisHost) {
         return true;
     }
-
+    
     @Override
     public boolean shouldSendMessageToHost(Message m, DTNHost otherHost, DTNHost thisHost) {
         if (SimClock.getIntTime() >= 28500) {
@@ -134,12 +134,14 @@ public class SoSim implements RoutingDecisionEngine {
 //            System.out.println(thisHost + " >> " + otherHost);
 //            System.out.println(this.euclidean);
         }
-
+        
         DecisionEngineRouter otherRouter = (DecisionEngineRouter) otherHost.getRouter();
         SoSim otherSoSim = (SoSim) otherRouter.getDecisionEngine();
-
+        
         double ti = this.euclidean; //masukkan nilai euclidean ke ti(Value)
-        if (otherHost == m.getTo() ) {  //jika node yang ditemui adalah destinasi
+
+        
+        if (otherHost == m.getTo()) {  //jika node yang ditemui adalah destinasi
             return true; //pesan akan dikirim
         } else if (ti < otherSoSim.getEuclidean()) { //jika value lebih kecil dari nilai similarity node lain
             this.euclidean = otherSoSim.getEuclidean(); // masukkan nilai euclidean ke node lainnya
@@ -152,51 +154,51 @@ public class SoSim implements RoutingDecisionEngine {
         }
         return false;
     }
-
+    
     @Override
     public boolean shouldDeleteSentMessage(Message m, DTNHost otherHost) {
         return false;
     }
-
+    
     @Override
     public boolean shouldDeleteOldMessage(Message m, DTNHost hostReportingOld) {
         return true;
     }
-
+    
     @Override
     public void update(DTNHost thisHost) {
-
+        
     }
-
+    
     @Override
     public RoutingDecisionEngine replicate() {
         return new SoSim(this);
     }
-
+    
     public List<Double> getVektorawal() {
         return vektorawal;
     }
-
+    
     public double getEuclidean() {
         return euclidean;
     }
-
+    
     public Double hitungEuclideanSim(DTNHost host, DTNHost peer) {
-
+        
         MessageRouter otherRoute = peer.getRouter();
-
+        
         DecisionEngineRouter otherDe = (DecisionEngineRouter) otherRoute;
-
+        
         SoSim otherSoSim = (SoSim) otherDe.getDecisionEngine();
-
+        
         BantuHitung bantu = new BantuHitung();
-
+        
         List<Double> x = getVektorawal();
         List<Double> y = otherSoSim.getVektorawal();
-
+        
         Double isiAkar = 0.0;
         if (!x.isEmpty() && !y.isEmpty()) {
-
+            
             for (int i = 0; i < x.size(); i++) {
                 isiAkar += Math.pow((y.get(i) - x.get(i)), 2);
             }

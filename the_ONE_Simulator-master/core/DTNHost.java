@@ -72,7 +72,6 @@ public class DTNHost implements Comparable<DTNHost> {
         affiliation =SocialFeature.setAffiliation(this.name);
         country = SocialFeature.setCountry(this.name);
         
-        
 
         for (NetworkInterface i : interf) {
             NetworkInterface ni = i.replicate();
@@ -117,7 +116,7 @@ public class DTNHost implements Comparable<DTNHost> {
     public Integer getCountry() {
         return country;
     }
-
+    
     /**
      * Returns a new network interface address and increments the address for
      * subsequent calls.
