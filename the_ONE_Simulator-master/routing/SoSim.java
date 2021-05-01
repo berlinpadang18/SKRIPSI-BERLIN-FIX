@@ -29,8 +29,10 @@ public class SoSim implements RoutingDecisionEngine {
     List<Double> vektorawal = new ArrayList<Double>();
     double euclidean = 0;
     
+//    Message t;
+    
     public SoSim(Settings s) {
-        
+
     }
     
     public SoSim(SoSim proto) {
@@ -47,11 +49,18 @@ public class SoSim implements RoutingDecisionEngine {
 
         if (SimClock.getTime() > 28500 && vektorawal.isEmpty()) { //jika sudah lebih dari waktu warmp up dan vektor awal kosong
 
+//                DTNHost idealNode;
+                
             //inisiasi berapa kali node ketemu node dengan sf yg sama, disini nilai awal 0
-            int nationality = 0;
-            int language = 0;
-            int affiliation = 0;
-            int country = 0;
+            int nationalityAll = 0;
+            int languageAll = 0;
+            int affiliationAll = 0;
+            int countryAll = 0;
+            
+//            int nationalityM = 0;
+//            int languageM = 0;
+//            int affiliationM = 0;
+//            int countryM = 0;
 
             //inisiasi berapa kali node ketemu dengan semua node, disini nilai awal 0
             double vektornationality = 0;
@@ -61,30 +70,51 @@ public class SoSim implements RoutingDecisionEngine {
             
             BantuHitung bantu = new BantuHitung(); //buat objek untuk manggil rumus bantu bagi biar bisa pecahan
 
+//            idealNode = t.getTo();
             for (DTNHost node : nodeditemui) {
                 
+//                if (node.getNationality() == idealNode.getNationality()) {
+//                    nationalityM++;
+//                }
+//                if (node.getLanguages()== idealNode.getLanguages()) {
+//                    languageM++;
+//                }
+//                if (node.getAffiliation()== idealNode.getAffiliation()) {
+//                    affiliationM++;
+//                }
+//                if (node.getCountry()== idealNode.getCountry()) {
+//                    countryM++;
+//                }
+                
                 if (node.getNationality() == thisHost.getNationality()) {
-                    nationality++;
+                    nationalityAll++;
                 }
                 if (node.getLanguages() == thisHost.getLanguages()) {
-                    language++;
+                    languageAll++;
                 }
                 if (node.getAffiliation() == thisHost.getAffiliation()) {
-                    affiliation++;
+                    affiliationAll++;
                 }
                 if (node.getCountry() == thisHost.getCountry()) {
-                    country++;
+                    countryAll++;
                 }
             }
             
             //hitung vektor , node yg sfnya sama dgn sfnya dibagi dengan node yg ditemui 
             if (!nodeditemui.isEmpty()) {
-                vektornationality = bantu.pembagi(nationality, nodeditemui.size());
-                vektorlanguage = bantu.pembagi(language, nodeditemui.size());
-//                System.out.println(affiliation + "/" + nodeditemui.size() ); // untuk cek hasilnya (yg dibagi 2)
-//                System.out.println(bantu.pembagi(affiliation, nodeditemui.size()));
-                vektoraffiliation = bantu.pembagi(affiliation, nodeditemui.size());
-                vektorcountry = bantu.pembagi(country, nodeditemui.size());
+//                vektornationality = bantu.pembagi(nationalityM, nodeditemui.size());
+//                vektorlanguage = bantu.pembagi(languageM, nodeditemui.size());
+//                vektoraffiliation = bantu.pembagi(affiliationM, nodeditemui.size());
+//                vektorcountry = bantu.pembagi(countryM, nodeditemui.size());
+                
+//                System.out.println(bantu.pembagi(affiliationM, nodeditemui.size()));
+                
+                vektornationality = bantu.pembagi(nationalityAll, nodeditemui.size());
+                vektorlanguage = bantu.pembagi(languageAll, nodeditemui.size());
+//                System.out.println(affiliationAll + "/" + nodeditemui.size() ); // untuk cek hasilnya (yg dibagi 2)
+//                System.out.println(bantu.pembagi(affiliationAll, nodeditemui.size()));
+                vektoraffiliation = bantu.pembagi(affiliationAll, nodeditemui.size());
+                vektorcountry = bantu.pembagi(countryAll, nodeditemui.size());
                 
             }
             //memasukkan nilai vektor msg2 sf pada vektor awal 
