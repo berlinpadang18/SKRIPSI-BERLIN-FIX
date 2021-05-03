@@ -58,7 +58,7 @@ Events.nrof = 2
 Events1.class = ExternalEventsQueue
 # (following settings are specific for the MessageEventGenerator class)
 # Creation interval in seconds (one new message every 25 to 35 seconds)
-Events1.filePath = DataSet.txt
+Events1.filePath = DataSet22.txt
 # Haggle3-Infocom5.csv
 # RealityConnectionTraceFinal.txt
 
