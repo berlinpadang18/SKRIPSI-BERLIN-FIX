@@ -128,8 +128,8 @@ public class SoSim implements RoutingDecisionEngine {
         if (SimClock.getIntTime() >= 28500) {
             this.euclidean = hitungEuclideanSim(thisHost, otherHost);
 
-            System.out.println(thisHost + " >> " + otherHost);
-            System.out.println(this.euclidean);
+//            System.out.println(thisHost + " >> " + otherHost);
+//            System.out.println(this.euclidean);
         }
         
         DecisionEngineRouter otherRouter = (DecisionEngineRouter) otherHost.getRouter();
