@@ -4,7 +4,8 @@ Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 #Scenario.endTime = 130000
-Scenario.endTime = 432000
+#Scenario.endTime = 432000
+Scenario.endTime = 450000
 
 
 # "Bluetooth" interface for all nodes
@@ -82,14 +83,14 @@ Events2.size = 250k, 300k
 Events2.hosts = 0,80
 Events2.prefix = M
 
-Events2.time = 0, 253283 
+Events2.time = 0, 450000 
 #274883 Haggle 3 infocom 5 253283
 #16981816 Reality 16377016 15772216
 
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 1
+MovementModel.rngSeed = 2
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 500, 500
 # How long time to move hosts in the world before real simulation

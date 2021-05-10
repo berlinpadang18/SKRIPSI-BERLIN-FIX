@@ -78,8 +78,6 @@ public class SoSim implements RoutingDecisionEngine {
             if (!nodeditemui.isEmpty()) {
                 vektornationality = bantu.pembagi(nationalityAll, nodeditemui.size());
                 vektorlanguage = bantu.pembagi(languageAll, nodeditemui.size());
-//                System.out.println(affiliationAll + "/" + nodeditemui.size() ); // untuk cek hasilnya (yg dibagi 2)
-//                System.out.println(bantu.pembagi(affiliationAll, nodeditemui.size()));
                 vektoraffiliation = bantu.pembagi(affiliationAll, nodeditemui.size());
                 vektorcountry = bantu.pembagi(countryAll, nodeditemui.size());
                 
