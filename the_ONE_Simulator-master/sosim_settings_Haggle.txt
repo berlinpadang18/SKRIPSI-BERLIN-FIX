@@ -1,11 +1,11 @@
 ## Scenario settings SoSim 
-Scenario.name = sosim_settings
+Scenario.name = sosim_settings_Haggle
 Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 #Scenario.endTime = 130000
 #Scenario.endTime = 432000
-Scenario.endTime = 450000
+Scenario.endTime = 150000
 
 
 # "Bluetooth" interface for all nodes
@@ -21,13 +21,13 @@ highspeedInterface.transmitRange = 1000
 
 Scenario.nrofHostGroups = 1
 # ROUTER
-Group.movementModel = RandomWaypoint
+Group.movementModel = StationaryMovement
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
 DecisionEngineRouter.decisionEngine = SoSim
 # Send Queue Mode, AFNER Using ascending order 
 #Group.sendQueue = 3
-Group.bufferSize = 10M
+Group.bufferSize = 5M
 Group.waitTime = 0, 120
 # All nodes have the bluetooth interface
 Group.nrofInterfaces = 1
@@ -50,7 +50,7 @@ Group1.groupID = p
 # Haggle3-Infocom5 43800
 
 #Group1.nrofHosts = 80
-Group1.nodeLocation = 10, 10
+Group1.nodeLocation = 0,1
 
 ## Message creation parameters 
 # How many event generators
@@ -59,14 +59,14 @@ Events.nrof = 2
 Events1.class = ExternalEventsQueue
 # (following settings are specific for the MessageEventGenerator class)
 # Creation interval in seconds (one new message every 25 to 35 seconds)
-Events1.filePath = DataSet22.txt
+Events1.filePath = Haggle3-Infocom5.csv
 # Haggle3-Infocom5.csv
 # RealityConnectionTraceFinal.txt
 
 Events2.class = MessageEventGenerator
 # change interval to have more or less messages, see javadocs for more information.
 
-Events2.interval = 2320, 2480
+Events2.interval = 1160, 1240
 
 # 25, 30 (~120 texts/hour)
 # 290, 310 (~12 texts/hour) Reality
@@ -83,7 +83,7 @@ Events2.size = 250k, 300k
 Events2.hosts = 0,80
 Events2.prefix = M
 
-Events2.time = 0, 450000 
+Events2.time = 0, 150000
 #274883 Haggle 3 infocom 5 253283
 #16981816 Reality 16377016 15772216
 

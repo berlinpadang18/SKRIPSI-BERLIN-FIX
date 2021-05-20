@@ -36,7 +36,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<MovementListener> movListeners;
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
-    private Integer nationality, languages, affiliation, country;
+    private Integer nationality, languages, affiliation, country, city, position;
    
         
     static {
