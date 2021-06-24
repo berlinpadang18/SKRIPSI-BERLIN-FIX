@@ -80,8 +80,8 @@ public class SoSim implements RoutingDecisionEngine {
                 vektorlanguage = bantu.pembagi(languageAll, nodeditemui.size());
                 vektoraffiliation = bantu.pembagi(affiliationAll, nodeditemui.size());
                 vektorcountry = bantu.pembagi(countryAll, nodeditemui.size());
-                
             }
+            
             //memasukkan nilai vektor msg2 sf pada vektor awal 
             vektorawal.add(vektornationality);
             vektorawal.add(vektorlanguage);

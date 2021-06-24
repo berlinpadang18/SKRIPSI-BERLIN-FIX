@@ -1,5 +1,5 @@
 ## Scenario settings SoSim 
-Scenario.name = sosim_settings
+Scenario.name = wait_settings
 Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
@@ -21,12 +21,12 @@ highspeedInterface.transmitRange = 1000
 
 Scenario.nrofHostGroups = 1
 # ROUTER
-Group.movementModel = RandomWaypoint
+Group.movementModel = StationaryMovement
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = SoSim
-#DecisionEngineRouter.nrofCopies = 10
-#DecisionEngineRouter.binaryMode = true
+DecisionEngineRouter.decisionEngine = WaitRouter
+DecisionEngineRouter.nrofCopies = 10
+DecisionEngineRouter.binaryMode = true
 # Send Queue Mode, AFNER Using ascending order 
 #Group.sendQueue = 3
 Group.bufferSize = 10M
@@ -39,7 +39,7 @@ Group.speed = 0.5, 1.5
 ## TTL 24 hours=1440, 1 week= 10080, 3 weeks= 30240, 5 weeks= 50400
 #Group.msgTtl = 840
 #Group.msgTtl = 1440
-Group.msgTtl = 4320
+Group.msgTtl = 10080
 #Group.msgTtl = 10080
 #4320 Haggle 3 infocom 5
 #10080 Reality 20160
