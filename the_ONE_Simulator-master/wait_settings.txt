@@ -24,7 +24,7 @@ Scenario.nrofHostGroups = 1
 Group.movementModel = StationaryMovement
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = WaitRouter
+DecisionEngineRouter.decisionEngine = SnW
 DecisionEngineRouter.nrofCopies = 10
 DecisionEngineRouter.binaryMode = true
 # Send Queue Mode, AFNER Using ascending order 
