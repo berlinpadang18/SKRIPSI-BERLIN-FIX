@@ -24,7 +24,7 @@ Scenario.nrofHostGroups = 1
 Group.movementModel = RandomWaypoint
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = WaitRouter
+DecisionEngineRouter.decisionEngine = SoSim
 #DecisionEngineRouter.nrofCopies = 5
 #DecisionEngineRouter.binaryMode = true
 # Send Queue Mode, AFNER Using ascending order 
@@ -98,14 +98,14 @@ MovementModel.worldSize = 500, 500
 # How long time to move hosts in the world before real simulation
 #MovementModel.warmup = 30000
 #MovementModel.warmup = 55500
-#MovementModel.warmup = 28500
+MovementModel.warmup = 28500
 
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load
 Report.nrofReports = 2
 # length of the warm up period (simulated seconds)
-#Report.warmup = 28500
+Report.warmup = 28500
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/6 April/Haggle
 # Report classes to load
