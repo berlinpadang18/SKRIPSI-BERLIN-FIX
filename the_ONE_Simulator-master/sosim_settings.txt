@@ -5,7 +5,7 @@ Scenario.updateInterval = 0.1
 # 43200s == 12h
 #Scenario.endTime = 130000
 #Scenario.endTime = 432000
-Scenario.endTime = 150000
+Scenario.endTime = 432000
 
 
 # "Bluetooth" interface for all nodes
@@ -24,8 +24,8 @@ Scenario.nrofHostGroups = 1
 Group.movementModel = RandomWaypoint
 #Group.router = EpidemicRouter
 Group.router = DecisionEngineRouter
-DecisionEngineRouter.decisionEngine = SoSim
-#DecisionEngineRouter.nrofCopies = 10
+DecisionEngineRouter.decisionEngine = WaitRouter
+#DecisionEngineRouter.nrofCopies = 5
 #DecisionEngineRouter.binaryMode = true
 # Send Queue Mode, AFNER Using ascending order 
 #Group.sendQueue = 3
@@ -85,27 +85,27 @@ Events2.size = 250k, 300k
 Events2.hosts = 0,80
 Events2.prefix = M
 
-Events2.time = 0, 150000 
+Events2.time = 0, 432000 
 #274883 Haggle 3 infocom 5 253283
 #16981816 Reality 16377016 15772216
 
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 3
+MovementModel.rngSeed = 1
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 500, 500
 # How long time to move hosts in the world before real simulation
 #MovementModel.warmup = 30000
 #MovementModel.warmup = 55500
-MovementModel.warmup = 28500
+#MovementModel.warmup = 28500
 
 ## Reports - all report names have to be valid report classes
 
 # how many reports to load
 Report.nrofReports = 2
 # length of the warm up period (simulated seconds)
-Report.warmup = 28500
+#Report.warmup = 28500
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/6 April/Haggle
 # Report classes to load
