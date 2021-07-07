@@ -7,7 +7,7 @@ Scenario.name = Pembanding_Epidemic_settings
 Scenario.simulateConnections = true
 Scenario.updateInterval = 0.1
 # 43200s == 12h
-Scenario.endTime = 432000
+Scenario.endTime = 150000
 
 
 ## Interface-specific settings:
@@ -90,12 +90,12 @@ Events2.size = 250k,300k
 Events2.hosts = 0,80
 # Message ID prefix
 Events2.prefix = M
-Events2.time = 0, 432000
+Events2.time = 0, 150000
 
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 3
+MovementModel.rngSeed = 1
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 4500, 3400
 # How long time to move hosts in the world before real simulation
