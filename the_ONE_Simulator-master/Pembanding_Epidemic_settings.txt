@@ -4,7 +4,7 @@
 
 ## Scenario settings
 Scenario.name = Pembanding_Epidemic_settings
-Scenario.simulateConnections = true
+Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 Scenario.endTime = 150000
@@ -52,7 +52,7 @@ Scenario.nrofHostGroups = 1
 
 
 # Common settings for all groups
-Group.movementModel = RandomWaypoint
+Group.movementModel = StationaryMovement
 Group.router = DecisionEngineRouter
 DecisionEngineRouter.decisionEngine = EpidemicDecisionRouter
 Group.bufferSize = 10M
@@ -95,11 +95,11 @@ Events2.time = 0, 150000
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 1
+MovementModel.rngSeed = 3
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 4500, 3400
 # How long time to move hosts in the world before real simulation
-#MovementModel.warmup = 28500
+MovementModel.warmup = 28500
 
 ## Map based movement -movement model specific settings
 MapBasedMovement.nrofMapFiles = 4
@@ -114,7 +114,7 @@ MapBasedMovement.mapFile4 = data/shops.wkt
 # how many reports to load
 Report.nrofReports = 1
 # length of the warm up period (simulated seconds)
-Report.warmup = 0
+Report.warmup = 28500
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load

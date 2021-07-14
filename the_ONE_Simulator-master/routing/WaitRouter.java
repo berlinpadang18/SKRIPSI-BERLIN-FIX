@@ -18,28 +18,16 @@ import static routing.SnW.JUMLAH_COPIES;
  */
 public class WaitRouter implements RoutingDecisionEngine{
     
-//    public static final String JUMLAH_COPIES = "nrofCopies";
-//    public static final String BINARY_MODE = "binaryMode";
-//    public static final String SPRAYANDWAIT_NS = "SprayAndWaitRouter";
-//    public static final String MSG_COUNT_PROPERTY = SPRAYANDWAIT_NS + "."
-//            + "copies";
-//    
-//    protected int initialNrofCopies;
-//    protected boolean isBinary;
-    
     /**
      *
      * @param s
      */
     public WaitRouter(Settings s) {
-
-//        initialNrofCopies = s.getInt(JUMLAH_COPIES);
-//        isBinary = s.getBoolean(BINARY_MODE);
+        
     }
     
     public WaitRouter(WaitRouter r) {
-//        this.initialNrofCopies = r.initialNrofCopies;
-//        this.isBinary = r.isBinary;
+        
     }
 
     @Override
