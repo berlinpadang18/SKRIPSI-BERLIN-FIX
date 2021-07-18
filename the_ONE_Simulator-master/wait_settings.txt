@@ -90,7 +90,7 @@ Events2.size = 250k,300k
 Events2.hosts = 0,80
 # Message ID prefix
 Events2.prefix = M
-Events2.time = 0, 432000
+Events2.time = 0, 86400
 
 
 ## Movement model settings
