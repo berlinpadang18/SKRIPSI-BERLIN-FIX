@@ -8,6 +8,12 @@ Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
 Scenario.endTime = 150000
+#Scenario.endTime = 200000
+#Scenario.endTime = 250000
+#Scenario.endTime = 300000
+#Scenario.endTime = 350000
+#Scenario.endTime = 400000
+#Scenario.endTime = 432000
 
 
 ## Interface-specific settings:
@@ -55,6 +61,8 @@ Scenario.nrofHostGroups = 1
 Group.movementModel = StationaryMovement
 Group.router = DecisionEngineRouter
 DecisionEngineRouter.decisionEngine = EpidemicDecisionRouter
+#Group.router = EpidemicRouter
+
 Group.bufferSize = 10M
 Group.waitTime = 0, 120
 # All nodes have the bluetooth interface
@@ -90,12 +98,12 @@ Events2.size = 250k,300k
 Events2.hosts = 0,80
 # Message ID prefix
 Events2.prefix = M
-Events2.time = 0, 86400
+Events2.time = 0, 432000
 
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 3
+MovementModel.rngSeed = 10
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 4500, 3400
 # How long time to move hosts in the world before real simulation

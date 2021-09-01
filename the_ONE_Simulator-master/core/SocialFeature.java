@@ -23,163 +23,163 @@ public class SocialFeature {
 
         switch (name) {
             case "p0":
-                return 17;
+                return 1;
             case "p1":
-                return 16;
+                return 4;
             case "p2":
                 return 2;
             case "p3":
-                return 19;
+                return 4;
             case "p4":
-                return 3;
+                return 4;
             case "p5":
-                return 19;
+                return 3;
             case "p6":
-                return 11;
-            case "p7":
                 return 1;
+            case "p7":
+                return 3;
             case "p8":
-                return 2;
+                return 4;
             case "p9":
-                return 11;
+                return 4;
             case "p10":
-                return 2;
+                return 4;
             case "p11":
-                return 11;
+                return 3;
             case "p12":
                 return 1;
             case "p13":
-                return 8;
-            case "p14":
-                return 2;
-            case "p15":
-                return 10;
-            case "p16":
                 return 1;
+            case "p14":
+                return 4;
+            case "p15":
+                return 3;
+            case "p16":
+                return 4;
             case "p17":
-                return 12;
+                return 3;
             case "p18":
-                return 7;
+                return 1;
             case "p19":
-                return 3;
+                return 4;
             case "p20":
-                return 4;
+                return 2;
             case "p21":
-                return 16;
+                return 4;
             case "p22":
-                return 3;
+                return 4;
             case "p23":
-                return 10;
+                return 3;
             case "p24":
-                return 20;
+                return 1;
             case "p25":
-                return 5;
+                return 3;
             case "p26":
-                return 16;
+                return 3;
             case "p27":
-                return 3;
+                return 1;
             case "p28":
-                return 13;
+                return 2;
             case "p29":
-                return 12;
+                return 2;
             case "p30":
-                return 17;
+                return 3;
             case "p31":
-                return 12;
+                return 4;
             case "p32":
-                return 6;
+                return 3;
             case "p33":
-                return 13;
+                return 3;
             case "p34":
-                return 6;
+                return 3;
             case "p35":
-                return 15;
+                return 4;
             case "p36":
-                return 15;
+                return 3;
             case "p37":
-                return 6;
+                return 2;
             case "p38":
-                return 10;
+                return 3;
             case "p39":
-                return 6;
+                return 4;
             case "p40":
-                return 20;
+                return 1;
             case "p41":
-                return 2;
+                return 1;
             case "p42":
-                return 3;
+                return 1;
             case "p43":
-                return 4;
-            case "p44":
-                return 18;
-            case "p45":
-                return 17;
-            case "p46":
-                return 14;
-            case "p47":
-                return 11;
-            case "p48":
-                return 4;
-            case "p49":
                 return 3;
-            case "p50":
-                return 6;
-            case "p51":
-                return 18;
-            case "p52":
-                return 5;
-            case "p53":
+            case "p44":
+                return 4;
+            case "p45":
+                return 4;
+            case "p46":
                 return 2;
+            case "p47":
+                return 1;
+            case "p48":
+                return 1;
+            case "p49":
+                return 2;
+            case "p50":
+                return 2;
+            case "p51":
+                return 3;
+            case "p52":
+                return 4;
+            case "p53":
+                return 4;
             case "p54":
-                return 9;
+                return 2;
             case "p55":
-                return 12;
+                return 2;
             case "p56":
-                return 17;
+                return 2;
             case "p57":
-                return 6;
+                return 1;
             case "p58":
-                return 15;
+                return 4;
             case "p59":
-                return 5;
+                return 3;
             case "p60":
-                return 6;
+                return 3;
             case "p61":
-                return 8;
+                return 4;
             case "p62":
                 return 2;
             case "p63":
-                return 14;
+                return 3;
             case "p64":
-                return 14;
+                return 3;
             case "p65":
-                return 16;
+                return 2;
             case "p66":
-                return 5;
+                return 1;
             case "p67":
-                return 16;
+                return 1;
             case "p68":
-                return 7;
+                return 4;
             case "p69":
-                return 9;
+                return 4;
             case "p70":
                 return 1;
             case "p71":
-                return 8;
+                return 2;
             case "p72":
-                return 13;
+                return 3;
             case "p73":
-                return 14;
+                return 4;
             case "p74":
-                return 17;
+                return 2;
             case "p75":
-                return 8;
+                return 3;
             case "p76":
-                return 15;
+                return 2;
             case "p77":
-                return 13;
+                return 1;
             case "p78":
-                return 14;
+                return 3;
 
             default:
                 break;
@@ -191,163 +191,163 @@ public class SocialFeature {
 
         switch (name) {
             case "p0":
-                return 8;
+                return 3;
             case "p1":
-                return 15;
+                return 1;
             case "p2":
-                return 1;
+                return 3;
             case "p3":
-                return 13;
+                return 4;
             case "p4":
-                return 7;
+                return 3;
             case "p5":
-                return 5;
+                return 3;
             case "p6":
-                return 1;
+                return 3;
             case "p7":
-                return 15;
+                return 4;
             case "p8":
-                return 13;
+                return 2;
             case "p9":
-                return 20;
+                return 4;
             case "p10":
-                return 3;
+                return 2;
             case "p11":
-                return 7;
+                return 2;
             case "p12":
-                return 11;
+                return 2;
             case "p13":
-                return 12;
+                return 3;
             case "p14":
-                return 15;
+                return 4;
             case "p15":
-                return 18;
+                return 1;
             case "p16":
-                return 19;
+                return 4;
             case "p17":
-                return 15;
+                return 4;
             case "p18":
-                return 18;
+                return 2;
             case "p19":
-                return 9;
+                return 1;
             case "p20":
-                return 10;
+                return 2;
             case "p21":
-                return 6;
+                return 2;
             case "p22":
-                return 11;
+                return 2;
             case "p23":
-                return 17;
+                return 2;
             case "p24":
-                return 6;
+                return 3;
             case "p25":
-                return 7;
+                return 1;
             case "p26":
-                return 20;
+                return 2;
             case "p27":
-                return 8;
+                return 2;
             case "p28":
-                return 19;
+                return 1;
             case "p29":
-                return 17;
+                return 1;
             case "p30":
-                return 10;
+                return 2;
             case "p31":
-                return 3;
+                return 4;
             case "p32":
-                return 3;
+                return 4;
             case "p33":
-                return 19;
+                return 2;
             case "p34":
-                return 18;
+                return 1;
             case "p35":
-                return 20;
+                return 2;
             case "p36":
-                return 16;
+                return 1;
             case "p37":
-                return 20;
+                return 2;
             case "p38":
-                return 17;
+                return 2;
             case "p39":
-                return 15;
+                return 4;
             case "p40":
-                return 18;
+                return 3;
             case "p41":
                 return 3;
             case "p42":
-                return 11;
-            case "p43":
-                return 8;
-            case "p44":
-                return 13;
-            case "p45":
-                return 5;
-            case "p46":
-                return 10;
-            case "p47":
-                return 9;
-            case "p48":
-                return 4;
-            case "p49":
-                return 10;
-            case "p50":
-                return 16;
-            case "p51":
-                return 14;
-            case "p52":
-                return 13;
-            case "p53":
-                return 6;
-            case "p54":
-                return 18;
-            case "p55":
-                return 9;
-            case "p56":
-                return 8;
-            case "p57":
-                return 1;
-            case "p58":
-                return 18;
-            case "p59":
-                return 17;
-            case "p60":
                 return 2;
+            case "p43":
+                return 2;
+            case "p44":
+                return 4;
+            case "p45":
+                return 3;
+            case "p46":
+                return 4;
+            case "p47":
+                return 1;
+            case "p48":
+                return 3;
+            case "p49":
+                return 4;
+            case "p50":
+                return 4;
+            case "p51":
+                return 2;
+            case "p52":
+                return 3;
+            case "p53":
+                return 1;
+            case "p54":
+                return 1;
+            case "p55":
+                return 2;
+            case "p56":
+                return 3;
+            case "p57":
+                return 3;
+            case "p58":
+                return 4;
+            case "p59":
+                return 3;
+            case "p60":
+                return 3;
             case "p61":
-                return 18;
+                return 1;
             case "p62":
-                return 11;
+                return 4;
             case "p63":
-                return 16;
+                return 3;
             case "p64":
-                return 15;
+                return 1;
             case "p65":
                 return 2;
             case "p66":
-                return 16;
-            case "p67":
-                return 5;
-            case "p68":
                 return 1;
+            case "p67":
+                return 2;
+            case "p68":
+                return 4;
             case "p69":
-                return 17;
+                return 4;
             case "p70":
                 return 1;
             case "p71":
-                return 20;
+                return 4;
             case "p72":
-                return 5;
+                return 3;
             case "p73":
                 return 3;
             case "p74":
-                return 8;
+                return 3;
             case "p75":
-                return 8;
+                return 3;
             case "p76":
-                return 16;
+                return 2;
             case "p77":
-                return 18;
+                return 3;
             case "p78":
-                return 13;
+                return 4;
 
             default:
                 break;
@@ -359,163 +359,163 @@ public class SocialFeature {
 
         switch (name) {
             case "p0":
-                return 8;
+                return 2;
             case "p1":
-                return 3;
+                return 2;
             case "p2":
-                return 10;
+                return 2;
             case "p3":
-                return 17;
+                return 4;
             case "p4":
-                return 1;
+                return 4;
             case "p5":
-                return 7;
+                return 2;
             case "p6":
-                return 10;
+                return 3;
             case "p7":
-                return 3;
+                return 4;
             case "p8":
-                return 3;
+                return 1;
             case "p9":
-                return 8;
+                return 2;
             case "p10":
-                return 9;
+                return 1;
             case "p11":
-                return 18;
+                return 1;
             case "p12":
-                return 16;
+                return 2;
             case "p13":
-                return 7;
+                return 4;
             case "p14":
-                return 9;
+                return 4;
             case "p15":
-                return 5;
+                return 2;
             case "p16":
-                return 5;
+                return 2;
             case "p17":
-                return 17;
+                return 4;
             case "p18":
                 return 2;
             case "p19":
-                return 16;
-            case "p20":
-                return 14;
-            case "p21":
-                return 11;
-            case "p22":
-                return 18;
-            case "p23":
-                return 3;
-            case "p24":
-                return 17;
-            case "p25":
-                return 10;
-            case "p26":
-                return 14;
-            case "p27":
-                return 6;
-            case "p28":
-                return 8;
-            case "p29":
-                return 18;
-            case "p30":
-                return 9;
-            case "p31":
-                return 10;
-            case "p32":
-                return 6;
-            case "p33":
-                return 7;
-            case "p34":
-                return 19;
-            case "p35":
-                return 14;
-            case "p36":
-                return 11;
-            case "p37":
-                return 16;
-            case "p38":
-                return 7;
-            case "p39":
-                return 6;
-            case "p40":
-                return 15;
-            case "p41":
-                return 10;
-            case "p42":
-                return 13;
-            case "p43":
                 return 4;
-            case "p44":
-                return 13;
-            case "p45":
-                return 18;
-            case "p46":
-                return 17;
-            case "p47":
-                return 10;
-            case "p48":
+            case "p20":
                 return 3;
+            case "p21":
+                return 2;
+            case "p22":
+                return 2;
+            case "p23":
+                return 1;
+            case "p24":
+                return 2;
+            case "p25":
+                return 2;
+            case "p26":
+                return 3;
+            case "p27":
+                return 3;
+            case "p28":
+                return 2;
+            case "p29":
+                return 1;
+            case "p30":
+                return 1;
+            case "p31":
+                return 4;
+            case "p32":
+                return 3;
+            case "p33":
+                return 3;
+            case "p34":
+                return 2;
+            case "p35":
+                return 1;
+            case "p36":
+                return 4;
+            case "p37":
+                return 2;
+            case "p38":
+                return 4;
+            case "p39":
+                return 2;
+            case "p40":
+                return 4;
+            case "p41":
+                return 1;
+            case "p42":
+                return 3;
+            case "p43":
+                return 3;
+            case "p44":
+                return 1;
+            case "p45":
+                return 1;
+            case "p46":
+                return 3;
+            case "p47":
+                return 1;
+            case "p48":
+                return 2;
             case "p49":
-                return 20;
+                return 3;
             case "p50":
-                return 17;
+                return 1;
             case "p51":
-                return 13;
+                return 4;
             case "p52":
-                return 15;
+                return 4;
             case "p53":
-                return 6;
+                return 4;
             case "p54":
-                return 12;
+                return 2;
             case "p55":
-                return 7;
+                return 1;
             case "p56":
-                return 11;
+                return 2;
             case "p57":
-                return 11;
+                return 1;
             case "p58":
                 return 1;
             case "p59":
-                return 9;
-            case "p60":
                 return 2;
-            case "p61":
+            case "p60":
                 return 1;
+            case "p61":
+                return 4;
             case "p62":
-                return 19;
+                return 1;
             case "p63":
-                return 17;
+                return 3;
             case "p64":
-                return 8;
+                return 2;
             case "p65":
-                return 8;
+                return 2;
             case "p66":
-                return 15;
+                return 1;
             case "p67":
                 return 3;
             case "p68":
-                return 5;
+                return 3;
             case "p69":
-                return 5;
+                return 1;
             case "p70":
                 return 3;
             case "p71":
-                return 20;
+                return 2;
             case "p72":
-                return 18;
+                return 2;
             case "p73":
-                return 8;
+                return 3;
             case "p74":
-                return 4;
+                return 1;
             case "p75":
-                return 11;
+                return 4;
             case "p76":
-                return 15;
+                return 3;
             case "p77":
-                return 12;
+                return 3;
             case "p78":
-                return 17;
+                return 3;
 
             default:
                 break;
@@ -527,163 +527,164 @@ public class SocialFeature {
 
         switch (name) {
             case "p0":
-                return 15;
+                return 3;
             case "p1":
-                return 5;
+                return 1;
             case "p2":
-                return 6;
+                return 3;
             case "p3":
-                return 20;
-            case "p4":
-                return 20;
-            case "p5":
                 return 4;
+            case "p4":
+                return 2;
+            case "p5":
+                return 3;
             case "p6":
-                return 7;
+                return 3;
             case "p7":
-                return 13;
+                return 4;
             case "p8":
-                return 17;
+                return 4;
             case "p9":
-                return 15;
+                return 2;
             case "p10":
-                return 5;
+                return 2;
             case "p11":
-                return 14;
+                return 4;
             case "p12":
-                return 17;
+                return 2;
             case "p13":
-                return 19;
+                return 3;
             case "p14":
-                return 15;
+                return 1;
             case "p15":
-                return 16;
+                return 3;
             case "p16":
-                return 8;
+                return 4;
             case "p17":
                 return 3;
             case "p18":
-                return 5;
+                return 3;
             case "p19":
-                return 14;
+                return 2;
             case "p20":
-                return 18;
+                return 1;
             case "p21":
-                return 12;
+                return 3;
             case "p22":
-                return 9;
+                return 2;
             case "p23":
-                return 12;
+                return 1;
             case "p24":
-                return 18;
+                return 1;
             case "p25":
-                return 5;
+                return 2;
             case "p26":
                 return 2;
             case "p27":
-                return 12;
+                return 1;
             case "p28":
-                return 17;
+                return 3;
             case "p29":
-                return 20;
+                return 1;
             case "p30":
-                return 5;
+                return 1;
             case "p31":
-                return 2;
+                return 3;
             case "p32":
-                return 12;
+                return 2;
             case "p33":
-                return 2;
+                return 3;
             case "p34":
-                return 17;
-            case "p35":
-                return 19;
-            case "p36":
-                return 5;
-            case "p37":
-                return 12;
-            case "p38":
-                return 4;
-            case "p39":
-                return 15;
-            case "p40":
-                return 16;
-            case "p41":
-                return 18;
-            case "p42":
                 return 2;
-            case "p43":
-                return 7;
-            case "p44":
+            case "p35":
+                return 2;
+            case "p36":
                 return 4;
+            case "p37":
+                return 1;
+            case "p38":
+                return 1;
+            case "p39":
+                return 1;
+            case "p40":
+                return 3;
+            case "p41":
+                return 2;
+            case "p42":
+                return 3;
+            case "p43":
+                return 2;
+            case "p44":
+                return 3;
             case "p45":
-                return 20;
+                return 2;
             case "p46":
-                return 12;
+                return 3;
             case "p47":
-                return 14;
+                return 1;
             case "p48":
                 return 4;
             case "p49":
-                return 12;
-            case "p50":
-                return 19;
-            case "p51":
-                return 3;
-            case "p52":
-                return 3;
-            case "p53":
-                return 5;
-            case "p54":
-                return 11;
-            case "p55":
-                return 20;
-            case "p56":
-                return 1;
-            case "p57":
-                return 7;
-            case "p58":
-                return 19;
-            case "p59":
-                return 20;
-            case "p60":
-                return 16;
-            case "p61":
-                return 10;
-            case "p62":
-                return 20;
-            case "p63":
                 return 2;
+            case "p50":
+                return 3;
+            case "p51":
+                return 4;
+            case "p52":
+                return 4;
+            case "p53":
+                return 4;
+            case "p54":
+                return 3;
+            case "p55":
+                return 3;
+            case "p56":
+                return 3;
+            case "p57":
+                return 2;
+            case "p58":
+                return 1;
+            case "p59":
+                return 1;
+            case "p60":
+                return 1;
+            case "p61":
+                return 4;
+            case "p62":
+                return 3;
+            case "p63":
+                return 1;
             case "p64":
-                return 9;
+                return 1;
             case "p65":
-                return 20;
+                return 1;
             case "p66":
-                return 12;
+                return 4;
             case "p67":
-                return 8;
+                return 4;
             case "p68":
-                return 6;
+                return 4;
             case "p69":
-                return 8;
+                return 3;
             case "p70":
-                return 15;
+                return 3;
             case "p71":
-                return 12;
+                return 1;
             case "p72":
-                return 15;
+                return 1;
             case "p73":
-                return 20;
+                return 4;
             case "p74":
-                return 9;
+                return 1;
             case "p75":
-                return 9;
+                return 1;
             case "p76":
-                return 19;
+                return 3;
             case "p77":
-                return 17;
+                return 4;
             case "p78":
-                return 13;
+                return 4;
+
             default:
                 break;
         }

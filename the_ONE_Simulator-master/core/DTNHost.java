@@ -37,8 +37,7 @@ public class DTNHost implements Comparable<DTNHost> {
     private List<NetworkInterface> net;
     private ModuleCommunicationBus comBus;
     private Integer nationality, languages, affiliation, country, city, position;
-   
-        
+
     static {
         DTNSim.registerForReset(DTNHost.class.getCanonicalName());
         reset();
@@ -65,13 +64,12 @@ public class DTNHost implements Comparable<DTNHost> {
         this.address = getNextAddress();
         this.name = groupId + address;
         this.net = new ArrayList<NetworkInterface>();
-        
-        
-        nationality = SocialFeature.setNationality(this.name);
-        languages = SocialFeature.setLanguages(this.name);
-        affiliation =SocialFeature.setAffiliation(this.name);
-        country = SocialFeature.setCountry(this.name);
-        
+
+//        nationality = SocialFeature.setNationality(this.name);
+//        languages = SocialFeature.setLanguages(this.name);
+//        affiliation =SocialFeature.setAffiliation(this.name);
+//        country = SocialFeature.setCountry(this.name);
+
 
         for (NetworkInterface i : interf) {
             NetworkInterface ni = i.replicate();
@@ -100,6 +98,19 @@ public class DTNHost implements Comparable<DTNHost> {
             }
         }
     }
+    public void setNationality(Integer angka){
+       nationality = angka;
+    }
+    public void setLanguages(Integer angka){
+       languages = angka;
+    }
+    public void setAffiliation(Integer angka){
+       affiliation = angka;
+    }
+    public void setCountry(Integer angka){
+       country = angka;
+    }
+    
 
     public Integer getNationality() {
         return nationality;
@@ -116,7 +127,7 @@ public class DTNHost implements Comparable<DTNHost> {
     public Integer getCountry() {
         return country;
     }
-    
+
     /**
      * Returns a new network interface address and increments the address for
      * subsequent calls.
@@ -561,24 +572,25 @@ public class DTNHost implements Comparable<DTNHost> {
         return this.getAddress() - h.getAddress();
     }
 
-    public String SocialFeaturePrint(){
-        String cetak ="";
-        cetak += nationality.toString()+ "\n";
-        cetak += languages.toString()+ "\n";
-        cetak += affiliation.toString()+ "\n";
-        cetak += country.toString()+ "\n";
-        
+    public String SocialFeaturePrint() {
+        String cetak = "";
+        cetak += nationality.toString() + "\n";
+        cetak += languages.toString() + "\n";
+        cetak += affiliation.toString() + "\n";
+        cetak += country.toString() + "\n";
+
         return cetak;
     }
-    
-    public List<Integer> getSocialFeature(){
+
+    public List<Integer> getSocialFeature() {
         List<Integer> sf = new ArrayList<Integer>();
-        
+
         sf.add(this.getNationality());
         sf.add(this.getLanguages());
         sf.add(this.getAffiliation());
         sf.add(this.getCountry());
-        
+
         return sf;
     }
+    
 }

@@ -3,11 +3,17 @@
 #
 
 ## Scenario settings
-Scenario.name = SOSIMM_settings
+Scenario.name = sosimm_settings
 Scenario.simulateConnections = false
 Scenario.updateInterval = 0.1
 # 43200s == 12h
-Scenario.endTime = 432000
+Scenario.endTime = 150000
+#Scenario.endTime = 200000
+#Scenario.endTime = 250000
+#Scenario.endTime = 300000
+#Scenario.endTime = 350000
+#Scenario.endTime = 400000
+#Scenario.endTime = 432000
 
 
 ## Interface-specific settings:
@@ -65,6 +71,7 @@ Group.interface1 = btInterface
 Group.speed = 0.5, 1.5
 # Message TTL of 300 minutes (5 hours)
 Group.msgTtl = 4320
+#Group.msgTtl = 1080
 
 Group.nrofHosts = 80
 
@@ -88,15 +95,15 @@ Events2.interval = 2320,2480
 # Message sizes (500kB - 1MB)
 Events2.size = 250k,300k
 # range of message source/destination addresses
-Events2.hosts = 0,80
+Events2.hosts = 0,79
 # Message ID prefix
 Events2.prefix = M
-Events2.time = 0, 86400
+Events2.time = 0, 432000
 
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
-MovementModel.rngSeed = 2 
+MovementModel.rngSeed = 1 
 # World's size for Movement Models without implicit size (width, height; meters)
 MovementModel.worldSize = 4500, 3400
 # How long time to move hosts in the world before real simulation

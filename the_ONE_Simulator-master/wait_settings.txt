@@ -7,6 +7,12 @@ Scenario.name = wait_settings
 Scenario.simulateConnections = true
 Scenario.updateInterval = 0.1
 # 43200s == 12h
+#Scenario.endTime = 150000
+#Scenario.endTime = 200000
+#Scenario.endTime = 250000
+#Scenario.endTime = 300000
+#Scenario.endTime = 350000
+#Scenario.endTime = 400000
 Scenario.endTime = 432000
 
 
@@ -83,14 +89,14 @@ Events1.filePath = DataSet22.txt
 Events2.class = MessageEventGenerator
 # (following settings are specific for the MessageEventGenerator class)
 # Creation interval in seconds (one new message every 25 to 35 seconds)
-Events2.interval = 2320,2480
+Events2.interval = 464,496
 # Message sizes (500kB - 1MB)
 Events2.size = 250k,300k
 # range of message source/destination addresses
 Events2.hosts = 0,80
 # Message ID prefix
 Events2.prefix = M
-Events2.time = 0, 86400
+Events2.time = 0, 432000
 
 
 ## Movement model settings
